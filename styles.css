@@ -1,5 +1,7 @@
 
-/* Question and Answers */
+
+
+/* Question and Multiple Answers */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -35,3 +37,14 @@ padding: 10px}
 }
 .answer-background { 
     background-color: lightyellow;}
+
+/* End of Questions and Multiple Answers */
+
+/* Question and Single Answers */
+
+.question-answer {
+    padding: 10px;
+    text-align: center;
+}
+
+/* End of Question and Single Answers */
