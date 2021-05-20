@@ -1,50 +1,61 @@
 
 
+/* Question and Single Answers */
+
+.border {
+  border: black solid 2px;
+  padding: 10px;
+}
+
+.question-background {
+  background-color: lightgreen;
+}
+.answer-background {
+  background-color: lightyellow;
+}
+
+.question-answer {
+  padding: 10px;
+  text-align: center;
+} 
+
+/* End of Question and Single Answers */
 
 /* Question and Multiple Answers */
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px 10px;
-    border: solid black 4px;
-    background-color: green;
-    padding: 10px;
-    margin: 10px;
-    grid-template-areas:
-      "Question Question Question Question"
-      "Answer-1 Answer-1 Answer-2 Answer-2"
-      "Answer-3 Answer-3 Answer-4 Answer-4";
-    text-align: center;
-  }
-  
-  .Question { grid-area: Question;}
-  
-  .Answer-1 { grid-area: Answer-1; }
-  
-  .Answer-2 { grid-area: Answer-2; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 10px;
+  border: solid black 4px;
+  background-color: green;
+  padding: 10px;
+  margin: 10px;
+  grid-template-areas:
+    "Question Question Question Question"
+    "Answer-1 Answer-1 Answer-2 Answer-2"
+    "Answer-3 Answer-3 Answer-4 Answer-4";
+  text-align: center;
 }
-  
-  .Answer-3 { grid-area: Answer-3; }
-  
-  .Answer-4 { grid-area: Answer-4; }
-  
-  .border { border: black solid 2px; 
-padding: 10px}
 
-.question-background {
-    background-color: lightgreen;
+.Question {
+  grid-area: Question;
 }
-.answer-background { 
-    background-color: lightyellow;}
+
+.Answer-1 {
+  grid-area: Answer-1;
+}
+
+.Answer-2 {
+  grid-area: Answer-2;
+}
+
+.Answer-3 {
+  grid-area: Answer-3;
+}
+
+.Answer-4 {
+  grid-area: Answer-4;
+}
 
 /* End of Questions and Multiple Answers */
-
-/* Question and Single Answers */
-
-.question-answer {
-    padding: 10px;
-    text-align: center;
-}
-
-/* End of Question and Single Answers */
