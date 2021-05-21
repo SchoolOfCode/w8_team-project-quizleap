@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
 
 /* Question and Single Answers */
 
@@ -17,8 +17,7 @@
 .question-answer {
   padding: 10px;
   text-align: center;
-
-} 
+}
 
 /* End of Question and Single Answers */
 
@@ -60,3 +59,29 @@
 }
 
 /* End of Questions and Multiple Answers */
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+header {
+  margin-bottom: 100px;
+}
+
+.button {
+  padding: 20px 60px;
+  margin: 10px 20px;
+  background: #e65600;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+}
