@@ -82,7 +82,7 @@ main {
 #category-image {
   max-height: 100vh;
   max-width: 100%;
-  display: inline;
+  /* display: inline; */
   position: absolute;
 }
 
