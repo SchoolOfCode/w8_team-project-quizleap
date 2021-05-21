@@ -1,24 +1,23 @@
-
-
 /* Question and Single Answers */
 
 .border {
   border: black solid 2px;
   padding: 10px;
+  border-radius: 10%;
 }
 
 .question-background {
-  background-color: lightgreen;
+  background: #f4b691;
+  border-radius: 10px;
 }
 .answer-background {
-  background-color: lightyellow;
+  background-color: #c3dda1;
 }
 
 .question-answer {
   padding: 10px;
   text-align: center;
-
-} 
+}
 
 /* End of Question and Single Answers */
 
@@ -28,8 +27,8 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 10px 10px;
-  border: solid black 4px;
-  background-color: green;
+  /* border: solid black 4px; */
+  background-color: none;
   padding: 10px;
   margin: 10px;
   grid-template-areas:
