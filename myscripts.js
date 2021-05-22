@@ -5,6 +5,24 @@ console.log("Hello Super Group 19")
 const displayedQuestion = document.getElementById("question-1");
 const displayedAnswer = document.getElementById("answer-1");
 
+const displaysSection = document.querySelector(".question-answer")
+
+// const displayedQuestion2 = document.getElementById("question-2");
+// const displayedAnswer2 = document.getElementById("answer-2");
+
+// const displayedQuestion3 = document.getElementById("question-3");
+// const displayedAnswer3 = document.getElementById("answer-3");
+
+// const displayedQuestion4 = document.getElementById("question-4");
+// const displayedAnswer4 = document.getElementById("answer-4");
+
+// const displayedQuestion5 = document.getElementById("question-5");
+// const displayedAnswer5 = document.getElementById("answer-5");
+
+
+
+
+
 
 
 
@@ -18,24 +36,42 @@ async function fetchQuizQuestions(){
     const dataResponse = await requestUrl.json();
     console.log(dataResponse);
     const result = dataResponse.results;
-    console.log(result);
-    const question = result[0].question;
-     //remove random characters
-    let formatedQuestion =  question.replace(
-        /&#039|&rsquo;|&quot;|&#39;|;/g,
-        ""
-      );
+      generateQuestions(result);
+      
+}
+
+fetchQuizQuestions();
+
+    // console.log(result);
+    // const question = result[0].question;
+    //  //remove random characters
+    // let formatedQuestion =  question.replace(
+    //     /&#039|&rsquo;|&quot;|&#39;|;/g,
+    //     ""
+    //   );
+
+    function generateQuestions (results) {
+      let generateQuestions = "";
+      results.map(result => {
+        generateQuestions  += 
+        `<div class="border question-background"> ${result.question
+        }</div>
+        <div class="border answer-background">${result.correct_answer}</div>`
+      })
+      displaysSection.innerHTML = generateQuestions;
+    }
+    
    
   
-    console.log(question);
-    const answer = result[0].correct_answer;
-    console.log(answer);
-    // change inner text of displayed question to match API data  
-    displayedQuestion.innerText = formatedQuestion;
-     // change inner text of displayed asnwer to match API data  
-    displayedAnswer.innerText = answer;
+    // console.log(question);
+    // const answer = result[0].correct_answer;
+    // console.log(answer);
+    // // change inner text of displayed question to match API data  
+    // displayedQuestion.innerText = formatedQuestion;
+    //  // change inner text of displayed asnwer to match API data  
+    // displayedAnswer.innerText = answer;
 
-}
+
 
 fetchQuizQuestions();
 
