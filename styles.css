@@ -5,6 +5,33 @@ body {
   margin: 0;
 }
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+header {
+  margin-bottom: 100px;
+}
+
+.button {
+  padding: 20px 60px;
+  margin: 10px 20px;
+  background: #e65600;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+}
+
+
 .border {
   border: black solid 2px;
   padding: 10px;
