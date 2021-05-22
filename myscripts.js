@@ -9,8 +9,18 @@ const displaysSection = document.querySelector(".question-answer");
 const typeOfQuestion = "multiple" // boolean / Every Boolean answer is true can't use this for a true or false API
 const difficultyLevel = "easy"; // medium || hard - can hard code it for now
 const musicButton = document.getElementById("music-category");
+let resultQuestion = [];
 let categoryNumber = null;
 
+
+const questionOption = [ {
+    category: "music",
+    number: 12
+},
+{
+    category: "movies",
+    number: 11
+}];
 
 // testing API data  - Open trivia data base API 
 // diplay music questions from API 
@@ -23,38 +33,30 @@ async function fetchQuizQuestions(categoryNumber){
     const requestUrl = await fetch (`https://opentdb.com/api.php?amount=10&category=${categoryNumber}&difficulty=${difficultyLevel}&type=${typeOfQuestion}`);
     const dataResponse = await requestUrl.json();
     console.log(dataResponse);
-    const result = dataResponse.results;
-    generateQuestions(result);
+    resultQuestion = dataResponse.results;
       
 }
 
-    function generateQuestions (results) {
-      let generateQuestions = "";
-      results.map(result => {
-        generateQuestions  += 
-        `<div class="border question-background"> ${result.question
-        }</div>
-        <div class="border answer-background">${result.correct_answer}</div>`
-      })
-      displaysSection.innerHTML = generateQuestions;
-    }
+ 
 
-
-    fetchQuizQuestions(12);
+    // fetchQuizQuestions(12);
   
 // function to change category number on click of button 
 
- function handleClick(){
+//  function handleClick(){
 
-    // change page to q+a page 
-     document.location='q+a-page.html';
-    // // change category number 
-     categoryNumber = 12; 
-    // // display questions from that category number 
-    // console.log(categoryNumber);
+//     // change page to q+a page 
+//      
+//     // // change category number 
+//      categoryNumber = 12; 
+//     // // display questions from that category number 
+//     // console.log(categoryNumber);
   
-    //  console.log("Hello");   
-}
+//     //  console.log("Hello");   
+// }
 
-//   musicButton.addEventListener("click", handleClick); 
+  musicButton.addEventListener("click", async () => {
+      await fetchQuizQuestions(12);
+      document.location='q+a-page.html';
+  }); 
 
