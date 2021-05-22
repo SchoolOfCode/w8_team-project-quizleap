@@ -20,11 +20,18 @@ async function fetchQuizQuestions(){
     const result = dataResponse.results;
     console.log(result);
     const question = result[0].question;
+     //remove random characters
+    let formatedQuestion =  question.replace(
+        /&#039|&rsquo;|&quot;|&#39;|;/g,
+        ""
+      );
+   
+  
     console.log(question);
     const answer = result[0].correct_answer;
     console.log(answer);
     // change inner text of displayed question to match API data  
-    displayedQuestion.innerText = question;
+    displayedQuestion.innerText = formatedQuestion;
      // change inner text of displayed asnwer to match API data  
     displayedAnswer.innerText = answer;
 
