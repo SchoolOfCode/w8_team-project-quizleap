@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
 
 /* Question and Single Answers */
+body {
+  margin: 0;
+}
 
 .border {
   border: black solid 2px;
@@ -70,13 +73,34 @@ main {
   flex-direction: column;
 }
 
-header {
-  margin-bottom: 100px;
+.block {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#category-image {
+  max-height: 100vh;
+  max-width: 100%;
+  /* display: inline; */
+  position: absolute;
+}
+
+#category-text {
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  display: inline;
+  position: absolute;
+  background-color: transparent;
+  font-size: 2rem;
+  overflow: hidden;
+  margin: -50px;
 }
 
 .button {
   padding: 20px 60px;
-  margin: 10px 20px;
+  margin: 20px 20px;
   background: #e65600;
   border-radius: 30px;
   font-weight: 500;
@@ -86,5 +110,34 @@ header {
   text-align: center;
   color: #ffffff;
   border: none;
-  text-decoration: none;
+}
+.category-buttons {
+  text-align: center;
+  display: block;
+  position: absolute;
+  margin-top: 100px;
+}
+
+#landing-image {
+  max-height: 100vh;
+  max-width: 100%;
+  display: inline;
+  position: absolute;
+}
+
+#start-button {
+  text-align: center;
+  /* display: inline; */
+  position: absolute;
+  margin-top: 100px;
+}
+
+#intro-text {
+  float: left;
+  text-align: center;
+  display: inline;
+  position: absolute;
+  display: block;
+  margin-bottom: 200px;
+  font-size: 2rem;
 }
