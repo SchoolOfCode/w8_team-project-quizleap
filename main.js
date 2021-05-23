@@ -7,6 +7,8 @@ let typeOfQuestion = "multiple"; // boolean / Every Boolean answer is true can't
 let difficultyLevel = "easy"; // medium || hard - can hard code it for now
 let categoryNumber = 0;
 let quantity = 5;
+let questions = document.getElementById("question-answer")
+const questionHeader = document.getElementById("question-header")
 // 11 is Film
 // 12 is Music
 // 22 is Geography
@@ -53,12 +55,23 @@ function changeDifficultylevel() {
   console.log(difficultyLevel)
 }
 
+function changeQuestionBackground(){
+  questionHeader.innerText = "Your Questions"
+  questionHeader.style.fontWeight = "bold"; 
+  questionHeader.style.fontSize = "26px";   
+  questionHeader.style.fontStyle = "italic";   
+}
 
 async function fetchQuizQuestions() {
+
+  changeQuestionBackground()
   changeCategoryType(categoryNumber);
   changeDifficultylevel(difficultyLevel)
   changeName()
   clearName()
+  changeamountofQuestions()
+  questions.style.backgroundColor = "white"; 
+  
 
   {
     // use fetch to do GET request for questions
@@ -66,7 +79,7 @@ async function fetchQuizQuestions() {
     // you can change the amount, category,difficulty, and type based on user input
   }
   const requestUrl = await fetch(
-    `https://opentdb.com/api.php?amount=10&category=${categoryNumber}&difficulty=${difficultyLevel}&type=${typeOfQuestion}`
+    `https://opentdb.com/api.php?amount=${quantity}&category=${categoryNumber}&difficulty=${difficultyLevel}&type=${typeOfQuestion}`
   );
   const dataResponse = await requestUrl.json();
   console.log(dataResponse);
@@ -75,11 +88,12 @@ async function fetchQuizQuestions() {
 }
 
 function generateQuestions(results) {
+  
   let generateQuestions = "";
   results.map((result) => {
+    
     generateQuestions += 
     `
-    
     <div class="border question-background"> ${result.question}</div>
     <div class="border corect-background">${result.correct_answer} ✔ </div>
     <div class="border answer-background">${result.incorrect_answers[0]}</div>
@@ -87,6 +101,7 @@ function generateQuestions(results) {
     <div class="border answer-background">${result.incorrect_answers[2]}</div>
     
     `
+    
   });
   displaysSection.innerHTML = generateQuestions;
 }
