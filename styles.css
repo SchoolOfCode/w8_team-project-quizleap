@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap"); */
 
 /* Question and Single Answers */
 body {
@@ -141,7 +141,8 @@ header {
   position: absolute;
   display: block;
   margin-bottom: 200px;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .block {

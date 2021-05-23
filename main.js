@@ -57,8 +57,10 @@ function changeDifficultylevel() {
 async function fetchQuizQuestions() {
   changeCategoryType(categoryNumber);
   changeDifficultylevel(difficultyLevel)
+  changeamountofQuestions(quantity)
   changeName()
   clearName()
+  
 
   {
     // use fetch to do GET request for questions
@@ -66,7 +68,7 @@ async function fetchQuizQuestions() {
     // you can change the amount, category,difficulty, and type based on user input
   }
   const requestUrl = await fetch(
-    `https://opentdb.com/api.php?amount=10&category=${categoryNumber}&difficulty=${difficultyLevel}&type=${typeOfQuestion}`
+    `https://opentdb.com/api.php?amount=${quantity}&category=${categoryNumber}&difficulty=${difficultyLevel}&type=${typeOfQuestion}`
   );
   const dataResponse = await requestUrl.json();
   console.log(dataResponse);
