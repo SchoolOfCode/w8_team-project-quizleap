@@ -57,7 +57,8 @@ function changeDifficultylevel() {
 function changeQuestionBackground(){
   // questionHeader.innerText = "Your Questions"
   questionHeader.style.fontWeight = "bold"; 
-  questionHeader.style.fontSize = "24px";   
+  questionHeader.style.fontSize = "1.5rem";   
+  // questionHeader.style.display = flex; 
   changeName()
   // questionHeader.style.fontStyle = "italic";   
 }
@@ -92,12 +93,13 @@ function generateQuestions(results) {
     generateQuestions += 
     `
     
-    <div class="border question-background"> ${result.question}</div>
-    <div class="border corect-background">${result.correct_answer} ✔ </div>
-    <div class="border answer-background">${result.incorrect_answers[0]}</div>
-    <div class="border answer-background">${result.incorrect_answers[1]}</div>
-    <div class="border answer-background">${result.incorrect_answers[2]}</div>
-    
+    <section class="question-answer grid-container">
+    <div class="border question-answer question-background Question"> ${result.question}</div>
+    <div class="border corect-background Answer-1" >${result.correct_answer} ✔ </div>
+    <div class="border answer-background Answer-2">${result.incorrect_answers[0]}</div>
+    <div class="border answer-background Answer-3">${result.incorrect_answers[1]}</div>
+    <div class="border answer-background Answer-4">${result.incorrect_answers[2]}</div>
+    </section>
     `
   });
   displaysSection.innerHTML = generateQuestions;
@@ -124,7 +126,7 @@ function changeName(){
   console.log("why arent you working")
 nameValue = document.getElementById("name-input").value;
 if (nameValue == ""){
-    nameValue = "They Who Must Not Be Named"
+    nameValue = "Clive"
 }
 let capitalName = capitalise(nameValue);
 changeH2.innerText = (`${capitalName}'s Questions`)

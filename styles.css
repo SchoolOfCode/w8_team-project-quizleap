@@ -58,29 +58,30 @@ header {
   margin-top: 20px;
   padding: 10px;
   text-align: center;
-  width: 400px;
+  max-width: 700px;
+  
 }
 
 /* End of Question and Single Answers */
 
 /* Question and Multiple Answers */
-/* .grid-container {
+ .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 10px 10px; */
+  gap: 5px 5px; */
 /* border: solid black 4px; */
-/* background-color: none;
-  padding: 10px;
-  margin: 10px;
+background-color: none;
+  padding: 5px;
+  margin: 5px;
   grid-template-areas:
     "Question Question Question Question"
     "Answer-1 Answer-1 Answer-2 Answer-2"
     "Answer-3 Answer-3 Answer-4 Answer-4";
   text-align: center;
-} */
+} 
 
-/* .Question {
+ .Question {
   grid-area: Question;
 }
 
@@ -98,7 +99,7 @@ header {
 
 .Answer-4 {
   grid-area: Answer-4;
-} */
+} 
 
 /* End of Questions and Multiple Answers */
 
