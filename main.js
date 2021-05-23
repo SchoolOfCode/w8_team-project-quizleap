@@ -7,14 +7,13 @@ let typeOfQuestion = "multiple"; // boolean / Every Boolean answer is true can't
 let difficultyLevel = "easy"; // medium || hard - can hard code it for now
 let categoryNumber = 0;
 let quantity = 5;
-let questions = document.getElementById("question-answer")
-const questionHeader = document.getElementById("question-header")
+let questions = document.getElementById("question-answer");
+const questionHeader = document.getElementById("question-header");
 // 11 is Film
 // 12 is Music
 // 22 is Geography
 // 27 is Animals
 // Not one for food
-
 
 function changeCategoryType() {
   let category = document.getElementById("category");
@@ -32,12 +31,11 @@ function changeCategoryType() {
   } else if (categoryValue === "celebrity-category") {
     categoryNumber = 26;
     console.log(categoryNumber);
-  }else if (categoryValue === "animal-category") {
+  } else if (categoryValue === "animal-category") {
     categoryNumber = 27;
     console.log(categoryNumber);
+  }
 }
-}
-
 
 function changeDifficultylevel() {
   const easy = document.getElementById("easy").checked;
@@ -51,27 +49,27 @@ function changeDifficultylevel() {
   } else if (hard) {
     difficultyLevel = "hard";
   }
-  console.log(difficultyLevel)
+  console.log(difficultyLevel);
 }
 
-function changeQuestionBackground(){
+function changeQuestionBackground() {
   // questionHeader.innerText = "Your Questions"
-  questionHeader.style.fontWeight = "bold"; 
-  questionHeader.style.fontSize = "1.5rem";   
-  // questionHeader.style.display = flex; 
-  changeName()
-  // questionHeader.style.fontStyle = "italic";   
+  questionHeader.style.fontWeight = "bold";
+  questionHeader.style.fontSize = "1.5rem";
+  // questionHeader.style.display = flex;
+  changeName();
+  // questionHeader.style.fontStyle = "italic";
 }
 
 async function fetchQuizQuestions() {
-  changeQuestionBackground()
-  
+  changeQuestionBackground();
+
   changeCategoryType(categoryNumber);
-  changeDifficultylevel(difficultyLevel)
-  changeAmountOfQuestions()
+  changeDifficultylevel(difficultyLevel);
+  changeAmountOfQuestions();
 
   // clearName() - removed
-  questions.style.backgroundColor = "white"; 
+  questions.style.backgroundColor = "white";
 
   {
     // use fetch to do GET request for questions
@@ -90,8 +88,7 @@ async function fetchQuizQuestions() {
 function generateQuestions(results) {
   let generateQuestions = "";
   results.map((result) => {
-    generateQuestions += 
-    `
+    generateQuestions += `
     
     <section class="question-answer grid-container">
     <div class="border question-answer question-background Question"> ${result.question}</div>
@@ -100,16 +97,16 @@ function generateQuestions(results) {
     <div class="border answer-background Answer-3">${result.incorrect_answers[1]}</div>
     <div class="border answer-background Answer-4">${result.incorrect_answers[2]}</div>
     </section>
-    `
+    `;
   });
   displaysSection.innerHTML = generateQuestions;
 }
 
-//change the text of the header to the value in the name box 
-let changeH1 = document.getElementById("category-text")
-let nameValue = document.getElementById("name-input").input
+//change the text of the header to the value in the name box
+let changeH1 = document.getElementById("category-text");
+let nameValue = document.getElementById("name-input").input;
 
-// function changeName(){ 
+// function changeName(){
 // let nameValue = document.getElementById("name-input").value;
 // if (nameValue == ""){
 //     nameValue = "QuizLeap"
@@ -119,41 +116,39 @@ let nameValue = document.getElementById("name-input").input
 // }
 
 // change your to name
-let changeH2 = document.getElementById("your-questions")
+let changeH2 = document.getElementById("your-questions");
 
-
-function changeName(){ 
-  console.log("why arent you working")
-nameValue = document.getElementById("name-input").value;
-if (nameValue == ""){
-    nameValue = "Clive"
-}
-let capitalName = capitalise(nameValue);
-changeH2.innerText = (`${capitalName}'s Questions`)
+function changeName() {
+  console.log("why arent you working");
+  nameValue = document.getElementById("name-input").value;
+  if (nameValue == "") {
+    nameValue = "Clive";
+  }
+  let capitalName = capitalise(nameValue);
+  changeH2.innerText = `${capitalName}'s Questions`;
 }
 
 function capitalise(word) {
-    // Remove first letter 
-    let lowerCaseWord = word.toLowerCase();
-    let upperCaseLetter = lowerCaseWord[0];
-    lowerCaseWord = lowerCaseWord.substring(1);
-    // Change letter to capital 
-    upperCaseLetter = upperCaseLetter.toUpperCase();
-    // Add letter back on to word
-    let capitaliseWord = upperCaseLetter + lowerCaseWord;
+  // Remove first letter
+  let lowerCaseWord = word.toLowerCase();
+  let upperCaseLetter = lowerCaseWord[0];
+  lowerCaseWord = lowerCaseWord.substring(1);
+  // Change letter to capital
+  upperCaseLetter = upperCaseLetter.toUpperCase();
+  // Add letter back on to word
+  let capitaliseWord = upperCaseLetter + lowerCaseWord;
 
-    return capitaliseWord;
-  }
+  return capitaliseWord;
+}
 
-  // input changes the amount of questions
+// input changes the amount of questions
 
-  function changeAmountOfQuestions() {
-    let questionQuantity = document.getElementById("quantity");
-    quantity = questionQuantity.value;
+function changeAmountOfQuestions() {
+  let questionQuantity = document.getElementById("quantity");
+  quantity = questionQuantity.value;
+}
 
-  } 
-
-  // clear input section 
-  function clearName(){
-    document.getElementById('name-input').value = '';
-  }
+// clear input section
+// function clearName() {
+//   document.getElementById("name-input").value = "";
+// }
