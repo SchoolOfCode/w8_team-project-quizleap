@@ -6,6 +6,7 @@ const displaysSection = document.getElementById("question-answer");
 let typeOfQuestion = "multiple"; // boolean / Every Boolean answer is true can't use this for a true or false API
 let difficultyLevel = "easy"; // medium || hard - can hard code it for now
 let categoryNumber = 0;
+let quantity = 5;
 // 11 is Film
 // 12 is Music
 // 22 is Geography
@@ -56,6 +57,8 @@ function changeDifficultylevel() {
 async function fetchQuizQuestions() {
   changeCategoryType(categoryNumber);
   changeDifficultylevel(difficultyLevel)
+  changeName()
+  clearName()
 
   {
     // use fetch to do GET request for questions
@@ -87,3 +90,42 @@ function generateQuestions(results) {
   });
   displaysSection.innerHTML = generateQuestions;
 }
+
+//change the text of the header to the value in the name box 
+let changeH1 = document.getElementById("category-text")
+let nameValue = document.getElementById("name-input").input
+
+function changeName(){ 
+let nameValue = document.getElementById("name-input").value;
+if (nameValue == ""){
+    nameValue = "QuizLeap"
+}
+let capitalName = capitalise(nameValue);
+changeH1.innerText = (`${capitalName}'s Quiz`)
+}
+
+function capitalise(word) {
+    // Remove first letter 
+    let lowerCaseWord = word.toLowerCase();
+    let upperCaseLetter = lowerCaseWord[0];
+    lowerCaseWord = lowerCaseWord.substring(1);
+    // Change letter to capital 
+    upperCaseLetter = upperCaseLetter.toUpperCase();
+    // Add letter back on to word
+    let capitaliseWord = upperCaseLetter + lowerCaseWord;
+
+    return capitaliseWord;
+  }
+
+  // input changes the amount of questions
+
+  function changeamountofQuestions() {
+    let questionQuantity = document.getElementById("quantity");
+    quantity = questionQuantity.value;
+
+  } 
+
+  // clear input section 
+  function clearName(){
+    document.getElementById('name-input').value = '';
+  }

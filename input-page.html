@@ -21,10 +21,11 @@ Input Page	Difficulty changes the information from APIs -->
 
      <main id="input-page">
 
-       <img src="/pictures/Desktop - landing page.png" id="question-image" /> 
+       <img src="pictures/Desktop - landing page.png" id="question-image" /> 
          <h1 class="block" id="category-text">Design your quiz</h1>
             <section  class ="block" id="search-section">
-                <input
+              <label>Name</label>  
+              <input
                   role="main"
                   aria-label="name-input"
                   id="name-input"
@@ -37,13 +38,13 @@ Input Page	Difficulty changes the information from APIs -->
      <section class="block" id="dificult-section">
          <form id="difficulty-section">
            <input type="checkbox" id="easy" name="easy" />
-           <label for="vegetarian">Easy</label>
+           <label for="easy">Easy</label>
  
            <input type="checkbox" id="medium" name="medium" />
            <label for="medium">Medium</label>
  
            <input type="checkbox" id="hard" name="hard" />
-           <label for="medium">Hard</label>
+           <label for="hard">Hard</label>
          </form>
         </section>
          <section class="block" id="category-section" label for="category">Choose a category:</label>
@@ -54,6 +55,21 @@ Input Page	Difficulty changes the information from APIs -->
                 <option value="animal-category">Animals</option>
                 <option value="celebrity-category">Celebrities</option>
               </select>
+            </section>
+
+            <section class="block" id="quantity-section" label for="quantity-section">How many questions would you like:</label>
+              <select id="quantity" name="quantity"> 
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+               </select>
             </section>
 
          <section class="block" id="submit-section"> 
