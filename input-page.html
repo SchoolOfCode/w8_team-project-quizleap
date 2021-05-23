@@ -2,3 +2,76 @@
 Input Page	Button that links to Category Page 
 Input Page	Checkbox to select difficulty 
 Input Page	Difficulty changes the information from APIs -->
+
+<!-- 
+    Show category drop down box 
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- <link rel="stylesheet" href="styles.css" /> -->
+     <title>Pick a category</title>
+   </head>
+   <body>
+     <!-- <header>
+       <h2 class="" id="">QuizLeap</h2>
+     </header> -->
+ 
+     <main class="" id="input-page">
+       <!-- <img src="/pictures/Desktop- Category page.png" id="category-image" /> -->
+ 
+ 
+         <h1 class="" id="category-text"><span id="quiz-host">Design your quiz</h1>
+
+            <section id="search-section">
+                <input
+                  role="main"
+                  aria-label="name-input"
+                  id="name-input"
+                  placeholder="Enter your name"
+                  onfocus="this.value=''"
+                  type="text"
+                />
+          
+              </section>
+ 
+
+     
+         <form id="difficulty-section">
+           <input type="checkbox" id="easy" name="easy" />
+           <label for="vegetarian">Easy</label>
+ 
+           <input type="checkbox" id="medium" name="medium" />
+           <label for="medium">Medium</label>
+ 
+           <input type="checkbox" id="hard" name="hard" />
+           <label for="medium">Hard</label>
+         </form>
+ 
+         <section id="category-section" label for="category">Choose a category:</label>
+ <select id="category" name="category">
+   <option value="music-category">Music</option>
+   <option value="film-category">Film</option>
+   <option value="geography-category">Geography</option>
+   <option value="animal-category">Animals</option>
+   <option value="celebrity-category">Celebrities</option>
+ </select>
+ <section>
+
+
+ <button class="button" id="submit-button" onclick=fetchQuizQuestions()>
+     Get Quiz!
+   </button>
+ </section>
+         </form>
+         <section class="question-answer">
+         </section>
+     <script src="becki.js"></script>
+   </body>
+ </html>
+ 
