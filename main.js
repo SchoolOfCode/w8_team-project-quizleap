@@ -55,18 +55,20 @@ function changeDifficultylevel() {
 }
 
 function changeQuestionBackground(){
-  questionHeader.innerText = "Your Questions"
+  // questionHeader.innerText = "Your Questions"
   questionHeader.style.fontWeight = "bold"; 
   questionHeader.style.fontSize = "24px";   
+  changeName()
   // questionHeader.style.fontStyle = "italic";   
 }
 
 async function fetchQuizQuestions() {
   changeQuestionBackground()
+  
   changeCategoryType(categoryNumber);
   changeDifficultylevel(difficultyLevel)
   changeAmountOfQuestions()
-  changeName()
+
   clearName()
   questions.style.backgroundColor = "white"; 
 
@@ -105,13 +107,27 @@ function generateQuestions(results) {
 let changeH1 = document.getElementById("category-text")
 let nameValue = document.getElementById("name-input").input
 
+// function changeName(){ 
+// let nameValue = document.getElementById("name-input").value;
+// if (nameValue == ""){
+//     nameValue = "QuizLeap"
+// }
+// let capitalName = capitalise(nameValue);
+// changeH1.innerText = (`${capitalName}'s Quiz`)
+// }
+
+// change your to name
+let changeH2 = document.getElementById("your-questions")
+
+
 function changeName(){ 
-let nameValue = document.getElementById("name-input").value;
+  console.log("why arent you working")
+nameValue = document.getElementById("name-input").value;
 if (nameValue == ""){
-    nameValue = "QuizLeap"
+    nameValue = "They Who Must Not Be Named"
 }
 let capitalName = capitalise(nameValue);
-changeH1.innerText = (`${capitalName}'s Quiz`)
+changeH2.innerText = (`${capitalName}'s Questions`)
 }
 
 function capitalise(word) {
