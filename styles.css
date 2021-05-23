@@ -199,3 +199,70 @@ background-color: none;
   position: relative;
   top: 1px;
 }
+
+
+
+
+
+@media only screen and (max-width: 1500px) {
+  #intro-text {
+    /* float: left; */
+    text-align: left;
+    /* display: inline; */
+    position: absolute;
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 100px;
+    font-size: 2rem;
+    font-weight: 600;
+    max-width: 400px;
+  }
+
+
+  @media only screen and (max-width: 700px) {
+    #intro-text {
+     
+      font-size: 1.6rem;
+      font-weight: 600;
+      max-width: 250px;
+      margin-right: 200px;
+  
+    }
+
+  #start-button {
+    text-align: center;
+    /* display: inline; */
+    position: absolute;
+    margin-top: 300px;
+    max-width: 30px;
+    display: flex;
+    margin-bottom: -60px;
+  margin-right: 200px;
+  padding: 0px;
+  border-radius: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #intro-text {
+ 
+    font-size: 1.3rem;
+margin-top: 60px;
+font-weight: 600;
+margin-right: 60px;
+
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  #intro-text {
+   font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #intro-text {
+   font-size: 1.1rem;
+   margin-left: 10px;
+  }
+}
