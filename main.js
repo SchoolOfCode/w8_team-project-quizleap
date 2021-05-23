@@ -70,7 +70,7 @@ async function fetchQuizQuestions() {
   changeDifficultylevel(difficultyLevel)
   changeAmountOfQuestions()
 
-  clearName()
+  // clearName() - removed
   questions.style.backgroundColor = "white"; 
 
   {
