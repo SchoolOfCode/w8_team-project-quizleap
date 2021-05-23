@@ -2,11 +2,7 @@ console.log("Hello Super Group 19");
 
 // grab DOM variable for question and answer
 
-const displayedQuestion = document.getElementById("question-1");
-const displayedAnswer = document.getElementById("answer-1");
-const submitButton = document.getElementById("submit-button");
-
-const displaysSection = document.querySelector(".question-answer");
+const displaysSection = document.getElementById("question-answer");
 let typeOfQuestion = "multiple"; // boolean / Every Boolean answer is true can't use this for a true or false API
 let difficultyLevel = "easy"; // medium || hard - can hard code it for now
 let categoryNumber = 0;
@@ -16,7 +12,6 @@ let categoryNumber = 0;
 // 27 is Animals
 // Not one for food
 
-// submitButton.addEventListener("click", hello);
 
 function changeCategoryType() {
   let category = document.getElementById("category");
@@ -32,11 +27,13 @@ function changeCategoryType() {
     categoryNumber = 22;
     console.log(categoryNumber);
   } else if (categoryValue === "celebrity-category") {
-    categoryNumber = 22;
+    categoryNumber = 26;
     console.log(categoryNumber);
-  }
+  }else if (categoryValue === "animal-category") {
+    categoryNumber = 27;
+    console.log(categoryNumber);
 }
-
+}
 
 
 
@@ -70,15 +67,23 @@ async function fetchQuizQuestions() {
   );
   const dataResponse = await requestUrl.json();
   console.log(dataResponse);
-  const results = dataResponse.results;
-  generateQuestions(results);
+  const result = dataResponse.results;
+  generateQuestions(result);
 }
 
 function generateQuestions(results) {
   let generateQuestions = "";
   results.map((result) => {
-    generateQuestions += `<div class="border question-background"> ${result.question}</div>
-        <div class="border answer-background">${result.correct_answer}</div>`;
+    generateQuestions += 
+    `
+    
+    <div class="border question-background"> ${result.question}</div>
+    <div class="border corect-background">${result.correct_answer} ✔ </div>
+    <div class="border answer-background">${result.incorrect_answers[0]}</div>
+    <div class="border answer-background">${result.incorrect_answers[1]}</div>
+    <div class="border answer-background">${result.incorrect_answers[2]}</div>
+    
+    `
   });
   displaysSection.innerHTML = generateQuestions;
 }

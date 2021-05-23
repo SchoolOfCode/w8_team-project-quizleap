@@ -3,13 +3,14 @@
 /* Question and Single Answers */
 body {
   margin: 0;
+  background-color: #c3dda1;
 }
 
 main {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   flex-direction: column;
+  /* justify-content: center; */
 }
 
 header {
@@ -31,7 +32,6 @@ header {
   text-decoration: none;
 }
 
-
 .border {
   border: black solid 2px;
   padding: 10px;
@@ -47,22 +47,26 @@ header {
   background-color: #c3dda1;
 }
 
-.question-answer {
+.corect-background {
+  background-color: palegoldenrod;
+}
+
+#question-answer {
   padding: 10px;
   text-align: center;
-  width: 500px;
+  width: 400px;
 }
 
 /* End of Question and Single Answers */
 
 /* Question and Multiple Answers */
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 10px 10px;
-  /* border: solid black 4px; */
-  background-color: none;
+  gap: 10px 10px; */
+/* border: solid black 4px; */
+/* background-color: none;
   padding: 10px;
   margin: 10px;
   grid-template-areas:
@@ -70,9 +74,9 @@ header {
     "Answer-1 Answer-1 Answer-2 Answer-2"
     "Answer-3 Answer-3 Answer-4 Answer-4";
   text-align: center;
-}
+} */
 
-.Question {
+/* .Question {
   grid-area: Question;
 }
 
@@ -90,52 +94,29 @@ header {
 
 .Answer-4 {
   grid-area: Answer-4;
-}
+} */
 
 /* End of Questions and Multiple Answers */
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
+#landing-page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  justify-content: center;
 }
-
-.block {
+#input-page {
   height: 100vh;
   width: 100%;
   position: relative;
 }
-
-#category-image {
+#landing-image {
   max-height: 100vh;
   max-width: 100%;
-  /* display: inline; */
-  position: absolute;
-}
-
-#category-text {
-  background-color: transparent;
-  color: black;
-  text-align: center;
   display: inline;
   position: absolute;
-  background-color: transparent;
-  font-size: 2rem;
-  overflow: hidden;
-  margin: -50px;
 }
 
-
-
-.category-buttons {
-  text-align: center;
-  display: block;
-  position: absolute;
-  margin-top: 100px;
-}
-
-#landing-image {
+#question-image {
   max-height: 100vh;
   max-width: 100%;
   display: inline;
@@ -151,10 +132,20 @@ main {
 
 #intro-text {
   float: left;
-  text-align: center;
-  display: inline;
+  text-align: left;
+  /* display: inline; */
   position: absolute;
   display: block;
   margin-bottom: 200px;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.block {
+  position: relative;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#category-text {
+  margin-top: 200px;
 }
