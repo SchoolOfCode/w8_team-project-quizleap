@@ -7,6 +7,8 @@ let typeOfQuestion = "multiple"; // boolean / Every Boolean answer is true can't
 let difficultyLevel = "easy"; // medium || hard - can hard code it for now
 let categoryNumber = 0;
 let quantity = 5;
+let questions = document.getElementById("question-answer")
+const questionHeader = document.getElementById("question-header")
 // 11 is Film
 // 12 is Music
 // 22 is Geography
@@ -37,7 +39,6 @@ function changeCategoryType() {
 }
 
 
-
 function changeDifficultylevel() {
   const easy = document.getElementById("easy").checked;
   const medium = document.getElementById("medium").checked;
@@ -53,14 +54,21 @@ function changeDifficultylevel() {
   console.log(difficultyLevel)
 }
 
+function changeQuestionBackground(){
+  questionHeader.innerText = "Your Questions"
+  questionHeader.style.fontWeight = "bold"; 
+  questionHeader.style.fontSize = "24px";   
+  // questionHeader.style.fontStyle = "italic";   
+}
 
 async function fetchQuizQuestions() {
+  changeQuestionBackground()
   changeCategoryType(categoryNumber);
   changeDifficultylevel(difficultyLevel)
-  changeamountofQuestions(quantity)
+  changeAmountOfQuestions()
   changeName()
   clearName()
-  
+  questions.style.backgroundColor = "white"; 
 
   {
     // use fetch to do GET request for questions
@@ -121,7 +129,7 @@ function capitalise(word) {
 
   // input changes the amount of questions
 
-  function changeamountofQuestions() {
+  function changeAmountOfQuestions() {
     let questionQuantity = document.getElementById("quantity");
     quantity = questionQuantity.value;
 
