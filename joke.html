@@ -1,0 +1,51 @@
+<!-- Input Page	Box for Quiz host name input that links to text on Category page 
+Input Page	Button that links to Category Page 
+Input Page	Checkbox to select difficulty 
+Input Page	Difficulty changes the information from APIs -->
+
+<!-- 
+    Show category drop down box 
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="styles.css" /> 
+     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+     <title>Pick a category</title>
+   </head>
+   <header>
+    <nav class="navbar">
+
+      <ul>
+          <li> <a href=input-page.html class="nav-link"> Create Quiz </a> </li>
+          <li> <a href=https://keepthescore.co/new/scoreboard class="nav-link"> Make Scoreboard </a> </li>
+          <li> <a href=joke.html class="nav-link"> Get Jokes </a> </li>
+          <li> <a href=giphy.html class="nav-link"> Get Giphy </a> </li>
+      </ul>
+
+  </nav>
+   </header>
+   <body>
+    <main id="joke-page">
+    <h1 class="block" id="joke-text"> Get Joke </h1>
+
+    <p> Want to make your audience laugh? </p>
+         <p> Click on the button for an endless supply of jokes</p>
+
+           <button class="button" id="random-joke" onclick= fetchRandomJoke()>
+              Get a joke 
+              </button> 
+         
+              <section id="joke-display">
+              
+            </section>
+
+     <script src="main.js"></script>
+   </body>
+ </html>
+ 

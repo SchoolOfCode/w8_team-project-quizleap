@@ -10,6 +10,7 @@ let quantity = 5;
 let questions = document.getElementById("question-answer");
 const questionHeader = document.getElementById("question-header");
 const YOUR_API_KEY = "IqF46LnFbxjHxtdgk53tzd943vxFQgV3";
+const submit = document.getElementById("submit-button");
 
 // 11 is Film
 // 12 is Music
@@ -58,20 +59,26 @@ function changeQuestionBackground() {
   // questionHeader.innerText = "Your Questions"
   questionHeader.style.fontWeight = "bold";
   questionHeader.style.fontSize = "1.5rem";
-  // questionHeader.style.display = flex;
+  questionHeader.style.fontSize = "1.5rem";
+  questionHeader.style.marginBottom = "-10px";
   changeName();
-  // questionHeader.style.fontStyle = "italic";
+  
 }
 
 async function fetchQuizQuestions() {
   changeQuestionBackground();
-
   changeCategoryType(categoryNumber);
   changeDifficultylevel(difficultyLevel);
   changeAmountOfQuestions();
 
   // clearName() - removed
   questions.style.backgroundColor = "white";
+  submit.innerText = "Next Round"
+  
+  let explanation =   document.getElementById("explanation-section");
+  explanation.classList.add("hide");
+  let nameText =   document.getElementById("search-section");
+  nameText.classList.add("hide");
 
   {
     // use fetch to do GET request for questions
@@ -86,6 +93,7 @@ async function fetchQuizQuestions() {
   const result = dataResponse.results;
   generateQuestions(result);
 }
+
 
 function generateQuestions(results) {
   let generateQuestions = "";
@@ -102,6 +110,8 @@ function generateQuestions(results) {
     `;
   });
   displaysSection.innerHTML = generateQuestions;
+  let topButton = document.getElementById("top-button")
+  topButton.classList.remove("hide");
 }
 
 //change the text of the header to the value in the name box
@@ -158,11 +168,18 @@ async function getGiphyOfTheDay(){
   const giphyResult = response.data;
   console.log(giphyResult);
   const giphyImage = document.createElement("img");
+
   giphyImage.setAttribute("id", "giphy-img");
   giphyImage.src = giphyResult["image_original_url"];
+  giphyImage.setAttribute("width", "900px")
+
+  let giphyText =   document.getElementById("giphy-explanation");
+  giphyText.classList.add("hide");
   let giphySection = document.getElementById("giphy-section");
+  giphySection.innerHTML= "";
   giphySection.appendChild(giphyImage);
 }
+
 
 async function fetchRandomJoke(){
   const requestURL = await fetch ("https://official-joke-api.appspot.com/random_joke");
@@ -175,6 +192,11 @@ async function fetchRandomJoke(){
   console.log(setUp);
 
   let jokeDisplay = document.getElementById("joke-display");
+  jokeDisplay.innerHTML= "";
+  jokeDisplay.style.backgroundColor = "white";
+  jokeDisplay.style.marginTop = "50px";
+  jokeDisplay.style.padding = "50px";
+  jokeDisplay.style.width = "4000px";
   let pTagOne = document.createElement("p");
   pTagOne.innerHTML = setUp;
   jokeDisplay.appendChild(pTagOne);

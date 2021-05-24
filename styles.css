@@ -9,6 +9,36 @@ body {
 
 }
 
+.navbar ul{
+  display: flex;
+  justify-content: space-between;
+  background-color: #e65600;
+  flex-flow: nowrap;
+  list-style-type: none;
+}
+
+li a {
+  display: block;
+  color:white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #a8530e;
+  transform: scale(1.1);
+  color: white;
+}
+
+.navbar li {
+  flex:5
+}
+
+.navbar .social {
+  flex: 1
+}
+
 input {
   font-size: 1.2rem;
 }
@@ -61,15 +91,15 @@ header {
   border-radius: 10px;
 }
 .answer-background {
-  background-color: #c3dda1;
+  background-color:palegoldenrod;
 }
 
 .corect-background {
-  background-color: palegoldenrod;
+  background-color: #c3dda1 ;
 }
 
 #question-answer {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding: 10px;
   text-align: center;
   max-width: 700px;
@@ -126,7 +156,27 @@ header {
   height: 100vh;
   width: 100%;
   position: relative;
+  
 }
+
+#category-text{
+  margin-top: 80px;
+}
+
+#joke-page {
+ margin-top: -50px;
+ text-align: center;
+}
+
+#giphy-page {
+  margin-top: -50px;
+  text-align: center;
+ }
+ 
+.hide {
+  display: none;
+}
+
 #landing-image {
   max-height: 100vh;
   max-width: 100%;
@@ -137,8 +187,10 @@ header {
 #question-image {
   max-height: 100vh;
   max-width: 100%;
+  width: fit-content;
   display: inline;
   position: absolute;
+  margin-top: -100px;
 }
 
 #start-button {
@@ -172,7 +224,7 @@ header {
   position: relative;
 }
 #category-text {
-  margin-top: 200px;
+ 
   font-size: 2.5rem;
 }
 
@@ -245,6 +297,32 @@ form {
 #joke-display {
   align-items: center;
 }
+
+#giphy-button{
+    margin-bottom: 50px;
+  } 
+
+#explanation{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+  
+}
+
+#giphy-text {
+  font-size: 3rem;
+}
+
+#joke-text {
+  font-size: 3rem;
+}
+
+#joke-display {
+  font-size: 1.5rem;
+}
+  
 @media only screen and (max-width: 1500px) {
   #intro-text {
     /* float: left; */
@@ -260,7 +338,7 @@ form {
   }
 
   #category-text {
-    margin-top: 190px;
+   
     font-size: 3rem;
     text-align: center;
   }
@@ -283,10 +361,18 @@ form {
     margin-right: 200px;
   }
 
+     
+      
+  }
 
-}
+
 
 @media only screen and (max-width: 500px) {
+  .navbar {
+    display: none;
+  }
+
+
   #intro-text {
     font-size: 1.3rem;
     margin-top: 60px;
@@ -298,9 +384,7 @@ form {
     margin-top: 130px;
     font-size: 2.5rem;
   }
-  #giphy-button{
-    display: none;
-  }
+
 
   #start-button {
       margin-bottom: -70px;
@@ -313,7 +397,10 @@ form {
     margin-top: 130px;
     font-size: 2.5rem;
   }
-}
+
+ 
+
+
 @media only screen and (max-width: 370px) {
   #intro-text {
     font-size: 1.2rem;

@@ -18,21 +18,30 @@ Input Page	Difficulty changes the information from APIs -->
      <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
      <title>Pick a category</title>
    </head>
+   <header>
+    <nav class="navbar">
+
+      <ul>
+        <li> <a href=input-page.html class="nav-link"> Create Quiz </a> </li>
+        <li> <a href=https://keepthescore.co/new/scoreboard class="nav-link" target="_blank"> Make Scoreboard </a> </li>
+        <li> <a href=joke.html class="nav-link"> Get Jokes </a> </li>
+        <li> <a href=giphy.html class="nav-link"> Get Giphy </a> </li>
+      </ul>
+
+  </nav>
+   </header>
    <body>
 
      <main id="input-page">
 
-       <img src="pictures/Desktop - landing page.png" id="question-image" /> 
+       <img src="pictures\Desktop - landing page.png" id="question-image" /> 
          <h1 class="block" id="category-text">Design your quiz</h1>
-         <section  class ="block" id="score-section">
-            <a href="https://keepthescore.co/new/scoreboard/" target="_blank" class="scorebutton" id="score-button"> Make Scoreboard </a>
+         <section  class ="block" id="explanation-section">
+            <p id="explanation"> Entertain your audience with customisable quiz questions </p> 
             <!-- <button class="button" id="giphy-button" onclick= getGiphyOfTheDay()>Get giphy of the day</button> -->
             </section>
 
-            <section id="giphy-section">
-           
-            </section>
-
+      
             <section  class ="block" id="search-section">
               <label>Name</label>  
               <input
@@ -88,6 +97,7 @@ Input Page	Difficulty changes the information from APIs -->
               <button class="button" id="submit-button" onclick=fetchQuizQuestions()>
                 Get Quiz!
               </button>
+            
 
             <!-- <button class="button" id="random-joke" onclick= fetchRandomJoke()>
               Get a joke in between rounds
@@ -105,6 +115,12 @@ Input Page	Difficulty changes the information from APIs -->
          <section class= "block" id="question-answer">
 
          </section>
+       
+         <footer>
+          <a href=#question-image class="button hide" id="top-button"> Back to top </a> </li>
+        
+          </nav>
+         </footer>
 
      <script src="main.js"></script>
    </body>
