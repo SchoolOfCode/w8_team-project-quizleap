@@ -15,6 +15,7 @@ Input Page	Difficulty changes the information from APIs -->
      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <link rel="stylesheet" href="styles.css" /> 
+     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
      <title>Pick a category</title>
    </head>
    <body>
@@ -24,9 +25,14 @@ Input Page	Difficulty changes the information from APIs -->
        <img src="pictures/Desktop - landing page.png" id="question-image" /> 
          <h1 class="block" id="category-text">Design your quiz</h1>
          <section  class ="block" id="score-section">
-         <a href="https://keepthescore.co/new/scoreboard/" target="_blank" class="scorebutton" id="score-button"> Make Scoreboard </a>
-</section>
-<form id="form-section">
+            <a href="https://keepthescore.co/new/scoreboard/" target="_blank" class="scorebutton" id="score-button"> Make Scoreboard </a>
+            <button class="button" id="giphy-button" onclick= getGiphyOfTheDay()>Get giphy of the day</button>
+            </section>
+
+            <section id="giphy-section">
+           
+            </section>
+
             <section  class ="block" id="search-section">
               <label>Name</label>  
               <input
@@ -37,20 +43,20 @@ Input Page	Difficulty changes the information from APIs -->
                   onfocus="this.value=''"
                   type="text"
                 />
-          
               </section>
-     <section class="block" id="dificult-section">
-         <form id="difficulty-section">
-           <input type="checkbox" id="easy" name="easy" />
-           <label for="easy">Easy</label>
- 
-           <input type="checkbox" id="medium" name="medium" />
-           <label for="medium">Medium</label>
- 
-           <input type="checkbox" id="hard" name="hard" />
-           <label for="hard">Hard</label>
-         </form>
-        </section>
+
+              <section class="block" id="dificult-section">
+                  <form id="difficulty-section">
+                    <input type="checkbox" id="easy" name="easy" />
+                    <label for="easy">Easy</label>
+          
+                    <input type="checkbox" id="medium" name="medium" />
+                    <label for="medium">Medium</label>
+          
+                    <input type="checkbox" id="hard" name="hard" />
+                    <label for="hard">Hard</label>
+                  </form>
+                  </section>
          <section class="block" id="category-section" label for="category">Choose a category:</label>
               <select id="category" name="category">
                 <option value="music-category">Music</option>
@@ -84,8 +90,6 @@ Input Page	Difficulty changes the information from APIs -->
               </button>
 
             </section>
-        
-          </form>
 
         <section class= "block" id="question-header">
           <h2 id="your-questions"></h2>

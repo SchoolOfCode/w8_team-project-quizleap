@@ -9,6 +9,8 @@ let categoryNumber = 0;
 let quantity = 5;
 let questions = document.getElementById("question-answer");
 const questionHeader = document.getElementById("question-header");
+const YOUR_API_KEY = "IqF46LnFbxjHxtdgk53tzd943vxFQgV3";
+
 // 11 is Film
 // 12 is Music
 // 22 is Geography
@@ -147,6 +149,21 @@ function changeAmountOfQuestions() {
   let questionQuantity = document.getElementById("quantity");
   quantity = questionQuantity.value;
 }
+
+
+async function getGiphyOfTheDay(){
+  const requestURL = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${YOUR_API_KEY}`);
+  const response = await requestURL.json();
+  console.log(response);
+  const giphyResult = response.data;
+  console.log(giphyResult);
+  const giphyImage = document.createElement("img");
+  giphyImage.setAttribute("id", "giphy-img");
+  giphyImage.src = giphyResult["image_original_url"];
+  let giphySection = document.getElementById("giphy-section");
+  giphySection.appendChild(giphyImage);
+}
+
 
 // clear input section
 // function clearName() {
