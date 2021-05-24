@@ -182,8 +182,8 @@ header {
   display: inline-block;
   color: #ffffff;
   font-family: arial;
-  font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 1rem;
   font-style: normal;
   height: 50px;
   line-height: 50px;
@@ -218,6 +218,10 @@ form {
 
 #joke-display {
   align-items: center;
+}
+
+#giphy-button {
+  background-color: #537e1b;
 }
 @media only screen and (max-width: 1500px) {
   #intro-text {
