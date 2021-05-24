@@ -5,6 +5,21 @@ body {
   margin: 0;
   background-color: #c3dda1;
   font-family: "Kanit", sans-serif;
+  font-size: 1.2rem;
+
+}
+
+input {
+  font-size: 1.2rem;
+}
+
+#name-input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#quantity-section {
+  margin-top: 15px;
 }
 
 main {
@@ -128,10 +143,12 @@ header {
 
 #start-button {
   text-align: center;
-  /* display: inline; */
   position: absolute;
   margin-top: 300px;
 }
+
+
+
 
 #intro-text {
   /* float: left; */
@@ -161,6 +178,15 @@ header {
 
 #submit-section {
   display: inline-flex;
+}
+
+#submit-button:hover {
+  background-color: #a8530e;
+}
+
+#submit-button:active {
+  position: relative;
+  top: 1px;
 }
 .scorebutton {
   margin: 10px;
@@ -193,7 +219,7 @@ header {
   text-shadow: 1px 1px 0px #2f6627;
 }
 .scorebutton:hover {
-  background-color: #5cbf2a;
+  background-color: #678856;
 }
 .scorebutton:active {
   position: relative;
@@ -257,18 +283,7 @@ form {
     margin-right: 200px;
   }
 
-  #start-button {
-    text-align: center;
-    /* display: inline; */
-    position: absolute;
-    margin-top: 300px;
-    max-width: 30px;
-    display: flex;
-    margin-bottom: -60px;
-    margin-right: 200px;
-    padding: 0px;
-    border-radius: 50%;
-  }
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -286,6 +301,11 @@ form {
   #giphy-button{
     display: none;
   }
+
+  #start-button {
+      margin-bottom: -70px;
+   
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -298,6 +318,8 @@ form {
   #intro-text {
     font-size: 1.2rem;
   }
+
+
 
   #quantity-section {
     display: flex;
