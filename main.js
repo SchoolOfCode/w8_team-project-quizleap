@@ -164,6 +164,25 @@ async function getGiphyOfTheDay(){
   giphySection.appendChild(giphyImage);
 }
 
+async function fetchRandomJoke(){
+  const requestURL = await fetch ("https://official-joke-api.appspot.com/random_joke");
+  const jokeResponse = await requestURL.json();
+  console.log(jokeResponse);
+
+  const punchLine = jokeResponse.punchline;
+  console.log(punchLine);
+  const setUp = jokeResponse.setup;
+  console.log(setUp);
+
+  let jokeDisplay = document.getElementById("joke-display");
+  let pTagOne = document.createElement("p");
+  pTagOne.innerHTML = setUp;
+  jokeDisplay.appendChild(pTagOne);
+  let pTagTwo = document.createElement("p");
+  pTagTwo.innerHTML = punchLine;
+  jokeDisplay.appendChild(pTagTwo);
+
+}
 
 // clear input section
 // function clearName() {
