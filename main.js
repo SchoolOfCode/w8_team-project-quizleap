@@ -9,7 +9,7 @@ let categoryNumber = 0;
 let quantity = 5;
 let questions = document.getElementById("question-answer");
 const questionHeader = document.getElementById("question-header");
-const YOUR_API_KEY = "IqF46LnFbxjHxtdgk53tzd943vxFQgV3";
+const YOUR_API_KEY = "IqF46LnFbxjHxtdgk53tzd943vxFQgV3";  
 
 // 11 is Film
 // 12 is Music
