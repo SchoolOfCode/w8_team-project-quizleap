@@ -11,14 +11,14 @@ body {
 .navbar ul {
   display: flex;
   justify-content: space-between;
-  background-color: #c3dda1;
+  background-color:  #e65600;
   flex-flow: nowrap;
   list-style-type: none;z
 }
 
 li a {
   display: block;
-  color: #2f6627;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
