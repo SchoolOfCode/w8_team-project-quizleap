@@ -18,7 +18,8 @@ Input Page	Difficulty changes the information from APIs -->
      <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
      <title>Get Giphy</title>
    </head>
-   <header>
+
+   <!-- <header>
     <nav class="navbar">
 
       <ul>
@@ -29,29 +30,35 @@ Input Page	Difficulty changes the information from APIs -->
       </ul>
 
   </nav>
-   </header>
+   </header> -->
+   
    <body>
+     <header>
+    <nav class="navbar">
 
-     <main id="giphy-page">
+      <ul>
+        <li> <a href=input-page.html class="nav-link"> Create Quiz </a> </li>
+        <li> <a href=https://keepthescore.co/new/scoreboard class="nav-link" target="_blank"> Make Scoreboard </a> </li>
+        <li> <a href=joke.html class="nav-link"> Get Jokes </a> </li>
+        <li> <a href=giphy.html class="nav-link"> Get Giphy </a> </li>
+      </ul>
 
-       
-         
-
+      </nav>
+    </header>
+       <main id="giphy-page" class="content">
          <section id="giphy-explanation">
          <h1 class="block" id="giphy-text">Get Giphy</h1>
          <p> Time for a break? Why not leave the audience with a fun Giphy to watch? </p>
          <p> Simply share your screen and don't forget to mute yourself</p>
+
          </section>
 
-         <button class="button" id="giphy-button" onclick= getGiphyOfTheDay()> Get Giphy</button> 
+          <button class="button" id="giphy-button" onclick= getGiphyOfTheDay()> Get Giphy</button> 
 
-         <section id="giphy-section">
-           
-        </section>
-
-            
-            
-
+          <section id="giphy-section">
+          </section>  
+      
+      </main>
      <script src="main.js"></script>
    </body>
  </html>
