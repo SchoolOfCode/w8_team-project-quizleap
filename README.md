@@ -26,7 +26,7 @@ Analysing the research and resources available we have decided to create a **qui
 
 The goal was to create a quiz app that will help the quiz host write personalised quizez based on user input.
 
-### User type:
+### User type
 
 - the quiz host/master.
 - event organisers
