@@ -6,7 +6,7 @@ For our Week 8 Front End project we have decided to create a **quiz app** websit
 
 ## Project management and understanding the problem
 
-We have met everyday and devided the tasks between us. We have used **Trello** and **GitHub Projects** to keep track of what everyone is doing. All screenshots and ideas were saved and recorded in a shared _Google drive_.
+We have met everyday and devided the tasks between us. We have used [Trello](https://trello.com/b/TfepGhBt/personalised-quiz-project) and **GitHub Projects** to keep track of what everyone is doing. All screenshots and ideas were saved and recorded in a shared _Google drive_.
 
 We also has stand-ups every morning where we would outline the plan for the day and any issues that we had during the previous day.
 
@@ -30,7 +30,7 @@ The goal was to create a quiz app that will help the quiz host write personalise
 
 - the quiz host/master.
 - event organisers
-- work gatherings/ team building quix host
+- work gatherings/ team building quiz host
 
 ### Problem:
 
