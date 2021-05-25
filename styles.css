@@ -400,9 +400,6 @@ form {
     font-size: 2.5rem;
   }
 
-  #start-button {
-    /* margin-bottom: -70px; */
-  }
 }
 
 @media only screen and (max-width: 400px) {
