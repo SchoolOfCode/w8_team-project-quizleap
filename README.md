@@ -14,15 +14,15 @@ We also has stand-ups every morning where we would outline the plan for the day 
 
 After our initial project planning meeting each of us did an inital research on the options available for the project which included:
 
-- Look at other similar websites - 5 mins
-- Think about new ideas for that category - 5 minutes
-- What APIs are available - 5 mins
+- Look at other similar websites
+- Think about new ideas for that category
+- What APIs are available
 
 Result, together with a pros and cons list were recorded in [this](https://drive.google.com/drive/folders/15dy0gI3PanYp9DkNSPorNgAOFTBC6VB1) shared google drive where we have recorded all our planning and research for the project.
 
 Analysing the research and resources available we have decided to create a **quiz app**.
 
-## Understanging the problem
+## Understanding the problem
 
 The goal was to create a quiz app that will help the quiz host write personalised quizes based on user input.
 
@@ -42,7 +42,7 @@ The goal was to create a quiz app that will help the quiz host write personalise
 - information overload
 - nothing available on the market that will provide questions+answers on each category based on user input
 
-### Understangin the why - User research
+### Understanding the why - User research
 
 We have used [this survey](https://docs.google.com/forms/d/1N8hOHJWRofNwi3P-5pdgvVV9NAWR31IHbEnNU-EK0aY/edit) to gather more information. We have used the responses and applied this in the design and functionality of our app.
 
