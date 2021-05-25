@@ -1,4 +1,4 @@
-# QuizLeap- and app designed and created for the quiz master
+# QuizLeap - an app designed and created for the quiz master
 
 ## Overview
 
