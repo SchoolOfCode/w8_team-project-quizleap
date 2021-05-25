@@ -31,14 +31,72 @@ function changeCategoryType() {
   } else if (categoryValue === "geography-category") {
     categoryNumber = 22;
     console.log(categoryNumber);
-  } else if (categoryValue === "celebrity-category") {
-    categoryNumber = 26;
-    console.log(categoryNumber);
+  // } else if (categoryValue === "celebrity-category") {
+  //   categoryNumber = 26;
+  //   console.log(categoryNumber);
   } else if (categoryValue === "animal-category") {
     categoryNumber = 27;
     console.log(categoryNumber);
-  }
+  } else if (categoryValue === "general-category") {
+    categoryNumber = 9;
+    console.log(categoryNumber);
+  } else if (categoryValue === "books-category") {
+    categoryNumber = 10;
+    console.log(categoryNumber);
+  // } else if (categoryValue === "musicals-category") {
+  //   categoryNumber = 13;
+  //   console.log(categoryNumber);
+  } else if (categoryValue === "television-category") {
+    categoryNumber = 14;
+    console.log(categoryNumber);
+  } else if (categoryValue === "video-category") {
+    categoryNumber = 15;
+    console.log(categoryNumber);
+  } else if (categoryValue === "board-category") {
+    categoryNumber = 16;
+    console.log(categoryNumber);
+  }else if (categoryValue === "mythology-category") {
+    categoryNumber = 20;
+    console.log(categoryNumber);
+  } else if (categoryValue === "sports-category") {
+    categoryNumber = 21;
+    console.log(categoryNumber);
+  } else if (categoryValue === "history-category") {
+    categoryNumber = 23;
+    console.log(categoryNumber);
+  // } else if (categoryValue === "politics-category") {
+  //   categoryNumber = 24;
+  //   console.log(categoryNumber);
+  // }else if (categoryValue === "art-category") {
+  //   categoryNumber = 25;
+  //   console.log(categoryNumber);
+  } else if (categoryValue === "vehicles-category") {
+    categoryNumber = 28;
+    console.log(categoryNumber);
+  } else if (categoryValue === "comics-category") {
+    categoryNumber = 29;
+    console.log(categoryNumber);
+  } else if (categoryValue === "manga-category") {
+    categoryNumber = 31;
+    console.log(categoryNumber);
+  }else if (categoryValue === "cartoon-category") {
+    categoryNumber = 32;
+    console.log(categoryNumber);
+  } else if (categoryValue === "nature-category") {
+    categoryNumber = 17;
+    console.log(categoryNumber);
+  } else if (categoryValue === "computing-category") {
+    categoryNumber = 18;
+    console.log(categoryNumber);
+  // } else if (categoryValue === "gadgets-category") {
+  //   categoryNumber = 19;
+  //   console.log(categoryNumber);
+  // }
+  
 }
+
+}
+
 
 function changeDifficultylevel() {
   const easy = document.getElementById("easy").checked;
