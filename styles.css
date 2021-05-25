@@ -6,20 +6,19 @@ body {
   background-color: #c3dda1;
   font-family: "Kanit", sans-serif;
   font-size: 1.2rem;
-
 }
 
-.navbar ul{
+.navbar ul {
   display: flex;
   justify-content: space-between;
-  background-color: #e65600;
+  background-color: #c3dda1;
   flex-flow: nowrap;
   list-style-type: none;
 }
 
 li a {
   display: block;
-  color:white;
+  color: #2f6627;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -32,18 +31,18 @@ li a:hover {
 }
 
 .navbar li {
-  flex:5
+  flex: 5;
 }
 
 .navbar .social {
-  flex: 1
+  flex: 1;
 }
 
 input {
   font-size: 1.2rem;
 }
 
-#name-input{
+#name-input {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -91,11 +90,11 @@ header {
   border-radius: 10px;
 }
 .answer-background {
-  background-color:palegoldenrod;
+  background-color: palegoldenrod;
 }
 
 .corect-background {
-  background-color: #c3dda1 ;
+  background-color: #c3dda1;
 }
 
 #question-answer {
@@ -156,23 +155,22 @@ header {
   height: 100vh;
   width: 100%;
   position: relative;
-  
 }
 
-#category-text{
+#category-text {
   margin-top: 80px;
 }
 
 #joke-page {
- margin-top: -50px;
- text-align: center;
+  margin-top: -50px;
+  text-align: center;
 }
 
 #giphy-page {
   margin-top: -50px;
   text-align: center;
- }
- 
+}
+
 .hide {
   display: none;
 }
@@ -199,9 +197,6 @@ header {
   margin-top: 300px;
 }
 
-
-
-
 #intro-text {
   /* float: left; */
   text-align: left;
@@ -224,7 +219,6 @@ header {
   position: relative;
 }
 #category-text {
- 
   font-size: 2.5rem;
 }
 
@@ -298,17 +292,16 @@ form {
   align-items: center;
 }
 
-#giphy-button{
-    margin-bottom: 50px;
-  } 
+#giphy-button {
+  margin-bottom: 50px;
+}
 
-#explanation{
+#explanation {
   display: flex;
   justify-content: center;
   text-align: center;
   padding-left: 60px;
   padding-right: 60px;
-  
 }
 
 #giphy-text {
@@ -322,7 +315,7 @@ form {
 #joke-display {
   font-size: 1.5rem;
 }
-  
+
 @media only screen and (max-width: 1500px) {
   #intro-text {
     /* float: left; */
@@ -338,7 +331,6 @@ form {
   }
 
   #category-text {
-   
     font-size: 3rem;
     text-align: center;
   }
@@ -360,18 +352,12 @@ form {
     max-width: 250px;
     margin-right: 200px;
   }
-
-     
-      
-  }
-
-
+}
 
 @media only screen and (max-width: 500px) {
   .navbar {
     display: none;
   }
-
 
   #intro-text {
     font-size: 1.3rem;
@@ -385,10 +371,8 @@ form {
     font-size: 2.5rem;
   }
 
-
   #start-button {
-      margin-bottom: -70px;
-   
+    margin-bottom: -70px;
   }
 }
 
@@ -397,24 +381,18 @@ form {
     margin-top: 130px;
     font-size: 2.5rem;
   }
-
- 
-
+}
 
 @media only screen and (max-width: 370px) {
   #intro-text {
     font-size: 1.2rem;
   }
-
-
-
   #quantity-section {
     display: flex;
     flex-flow: wrap column;
     justify-content: center;
   }
 }
-
 @media only screen and (max-width: 300px) {
   #intro-text {
     font-size: 1.1rem;

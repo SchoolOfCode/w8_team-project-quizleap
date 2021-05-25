@@ -89,7 +89,7 @@ async function fetchQuizQuestions() {
     `https://opentdb.com/api.php?amount=${quantity}&category=${categoryNumber}&difficulty=${difficultyLevel}&type=${typeOfQuestion}`
   );
   const dataResponse = await requestUrl.json();
-  console.log(dataResponse);
+  // console.log(dataResponse);
   const result = dataResponse.results;
   generateQuestions(result);
 }
@@ -116,7 +116,7 @@ function generateQuestions(results) {
 
 //change the text of the header to the value in the name box
 let changeH1 = document.getElementById("category-text");
-let nameValue = document.getElementById("name-input").input;
+let nameValue = document.getElementById("name-input").value;
 
 // function changeName(){
 // let nameValue = document.getElementById("name-input").value;
@@ -160,19 +160,21 @@ function changeAmountOfQuestions() {
   quantity = questionQuantity.value;
 }
 
-
+// get giphy of the day from giphy API 
 async function getGiphyOfTheDay(){
   const requestURL = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${YOUR_API_KEY}`);
   const response = await requestURL.json();
-  console.log(response);
+  // console.log(response);
   const giphyResult = response.data;
-  console.log(giphyResult);
+  // console.log(giphyResult);
+  // create img tag
   const giphyImage = document.createElement("img");
 
   giphyImage.setAttribute("id", "giphy-img");
+  // set image as fetched giphy
   giphyImage.src = giphyResult["image_original_url"];
   giphyImage.setAttribute("width", "900px")
-
+  // set giphy text 
   let giphyText =   document.getElementById("giphy-explanation");
   giphyText.classList.add("hide");
   let giphySection = document.getElementById("giphy-section");
@@ -180,16 +182,16 @@ async function getGiphyOfTheDay(){
   giphySection.appendChild(giphyImage);
 }
 
-
+// fetch randomly generated joke 
 async function fetchRandomJoke(){
   const requestURL = await fetch ("https://official-joke-api.appspot.com/random_joke");
   const jokeResponse = await requestURL.json();
-  console.log(jokeResponse);
+  // console.log(jokeResponse);
 
   const punchLine = jokeResponse.punchline;
-  console.log(punchLine);
+  // console.log(punchLine);
   const setUp = jokeResponse.setup;
-  console.log(setUp);
+  // console.log(setUp);
 
   let jokeDisplay = document.getElementById("joke-display");
   jokeDisplay.innerHTML= "";
