@@ -2,13 +2,13 @@
 
 ## Overview
 
-For our Week 8 Front End projetc we have decided to create a **quiz app** website designed for quiz hosts. Using our app you can create and design personalised quizes that will take the user input on the desired category/ number of questions/ difficuty and automatically generate questions and answers. We have also included a link to a _scoreboard_ that the host can use to keep track of each team's score.
+For our Week 8 Front End project we have decided to create a **quiz app** website designed for quiz hosts. Using our app you can create and design personalised quizes that will take the user input on the desired category, number of questions, difficuty settings and automatically generate questions and answers. We have also included a link to a _scoreboard_ that the host can use to keep track of each team's score.
 
 ## Project management and understanding the problem
 
 We have met everyday and devided the tasks between us. We have used **Trello** and **GitHub Projects** to keep track of what everyone is doing. All screenshots and ideas were saved and recorded in a shared _Google drive_.
 
-We also has stand-ups every moring where we would outline the plan for the day and any issues that we had during the previous day.
+We also has stand-ups every morning where we would outline the plan for the day and any issues that we had during the previous day.
 
 ## Initial research
 
@@ -18,13 +18,13 @@ After our initial project planning meeting each of us did an inital research on 
 - Think about new ideas for that category - 5 minutes
 - What APIs are available - 5 mins
 
-Result, together with a pros and cons list were recorded in [this](https://drive.google.com/drive/folders/15dy0gI3PanYp9DkNSPorNgAOFTBC6VB1) shared google drive where we have recorder all our planning and research for the project.
+Result, together with a pros and cons list were recorded in [this](https://drive.google.com/drive/folders/15dy0gI3PanYp9DkNSPorNgAOFTBC6VB1) shared google drive where we have recorded all our planning and research for the project.
 
 Analysing the research and resources available we have decided to create a **quiz app**.
 
 ## Understanging the problem
 
-The goal was to create a quiz app that will help the quiz host write personalised quizez based on user input.
+The goal was to create a quiz app that will help the quiz host write personalised quizes based on user input.
 
 ### User
 
@@ -44,7 +44,7 @@ The goal was to create a quiz app that will help the quiz host write personalise
 
 ### Understangin the why - User research
 
-We have used [this survey](https://docs.google.com/forms/d/1N8hOHJWRofNwi3P-5pdgvVV9NAWR31IHbEnNU-EK0aY/edit) to gather more information. We have used the responses and applied this in the design of our app.
+We have used [this survey](https://docs.google.com/forms/d/1N8hOHJWRofNwi3P-5pdgvVV9NAWR31IHbEnNU-EK0aY/edit) to gather more information. We have used the responses and applied this in the design and functionality of our app.
 
 The **main problem** to solve was the time spent on gathering the info. The **solution** will be the _fetched_ questions and answers from the **API** data.
 
@@ -64,7 +64,7 @@ The **main problem** to solve was the time spent on gathering the info. The **so
 - Option to save the quiz to reuse it
 - Leader Board
 - Difficulty Settings ✅
-- Different themes, hen do, work, birthdays
+- Different themes like hen do, work, birthdays
 - Ability to create your own quiz ✅
 - Ability to generate a pre made quiz with option to change questions
 - Accessibility - Log in on phone or website with a code
@@ -79,12 +79,12 @@ The **main problem** to solve was the time spent on gathering the info. The **so
 - API will fetch questions from the input ✅
 - All questions displayed on the same page for quiz host to read ✅
 - User can pick a selection of categories - Check Box ✅
-- Multiple APIs ✅
+- Multiple APIs used ✅
 - landing page ✅
 
 ### Initial strech goals
 
-- Use API to change difficulty of the questions ✅
+- Use API to change difficulty of the questions based on user input ✅
 - Refresh button for each question
 - Multiple Choice on Answers ✅
 - Refactor HTML to add information with JS ✅
@@ -116,9 +116,9 @@ We have split the tasks using [this](https://docs.google.com/spreadsheets/d/1eLN
 
 ## API used
 
-We have used [Open Trivia API](https://opentdb.com/api_config.php) as it was the only one that gave us the option to change categories/ dificluty levels and number of questions based onthe user input. It was also the API with the widests category selection.
+We have used [Open Trivia API](https://opentdb.com/api_config.php) as it was the only one that gave us the option to change categories and difficulty levels and number of questions based on the user input. It was also the API with the widest category selection.
 
-We have used **GET** requests to grab our data from the API. We practice our favourite async await function to enter the request-response cycle dance. The REST API gave us the response formatted as JSON (JavaScript Object Notation.). The data comes in pairs of keys and values that are colon-separated. We have used object dot notation to grab the data from the API and display that to the user.
+We have used **GET** requests to grab our data from the API. We practice our favourite async await function to enter the request-response cycle dance. The REST API gave us the response formatted as JSON (JavaScript Object Notation). The data comes in pairs of keys and values that are colon-separated. We have used object dot notation to grab the data from the API and display that to the user.
 
 Because this will be used for entertainment for our additional APIs we have used [Giphy generator](https://giphy.com/explore/generator) and [this](https://official-joke-api.appspot.com/random_joke) random joke generator that will definitely put a smile on everyone's face.
 
@@ -152,6 +152,7 @@ After completeing our basic version of the quiz app we have designed [this surve
 - created oage to display joke ✅
 - back to top button added ✅
 - background-color for correct answer changed to green ✅
+- added extra info about the app ✅
 
 ## Things to add in the future - strech goals
 
