@@ -13,7 +13,7 @@ body {
   justify-content: space-between;
   background-color: #c3dda1;
   flex-flow: nowrap;
-  list-style-type: none;
+  list-style-type: none;z
 }
 
 li a {
