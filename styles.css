@@ -326,6 +326,18 @@ form {
   margin-left: 800px
 }
 
+.joke-image{
+  z-index: -1;
+  position: absolute;
+  margin-top: -90px;
+  margin-left: 20px;
+  
+}
+
+#joke-page{
+  z-index: 1;
+}
+
 @media only screen and (max-width: 1500px) {
   #intro-text {
     /* float: left; */
