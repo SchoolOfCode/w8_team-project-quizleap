@@ -156,12 +156,13 @@ After completeing our basic version of the quiz app we have designed [this surve
 
 ## Things to add in the future - stretch goals
 
-- user research on name
+- user research on new features, design and name
 - add true or false option
 - make frogs animated
 - make a picture round
 - make a music/sound round
-- Option to add theme like Birthday Hen do
+- option to display questions over zoom 
+- option to add theme like Birthday Hen do
 
 ## Overall conclusion
 
