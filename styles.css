@@ -13,7 +13,7 @@ body {
   justify-content: space-between;
   background-color:  #e65600;
   flex-flow: nowrap;
-  list-style-type: none;z
+  list-style-type: none;
 }
 
 li a {
@@ -150,6 +150,7 @@ header {
   width: 100%;
   position: relative;
   justify-content: center;
+  display: flex;
 }
 #input-page {
   height: 100vh;
@@ -178,7 +179,7 @@ header {
 #landing-image {
   max-height: 100vh;
   max-width: 100%;
-  display: inline;
+  display: flex;
   position: absolute;
 }
 
@@ -316,6 +317,15 @@ form {
   font-size: 1.5rem;
 }
 
+#next-button {
+  margin-bottom: -50px;
+}
+
+#frog{
+  width: 350px;
+  margin-left: 800px
+}
+
 @media only screen and (max-width: 1500px) {
   #intro-text {
     /* float: left; */
@@ -328,6 +338,11 @@ form {
     font-size: 2rem;
     font-weight: 600;
     max-width: 400px;
+  }
+
+  #frog{
+    width: 330px;
+    margin-left: 300px
   }
 
   #category-text {
@@ -343,7 +358,26 @@ form {
   #submit-button {
     margin-top: 20px;
   }
+
+
 }
+
+@media only screen and (max-width: 1300px) {
+  #landing-image {
+  width: 80%;
+
+  }
+
+  #frog {
+    
+    margin-left: 250px ;
+  }
+
+  @media only screen and (max-width: 900px) {
+    
+    #frog {
+      width: 250px
+    }
 
 @media only screen and (max-width: 700px) {
   #intro-text {
@@ -352,11 +386,21 @@ form {
     max-width: 250px;
     margin-right: 200px;
   }
+
+  #frog {
+    width: 180px
+  }
 }
 
 @media only screen and (max-width: 500px) {
   .navbar {
     display: none;
+  }
+
+  
+  #frog {
+    width: 200px;
+    margin-left: 150px ;
   }
 
   #intro-text {
@@ -372,14 +416,25 @@ form {
   }
 
   #start-button {
-    margin-bottom: -70px;
+    margin-bottom: -50px;
   }
 }
+
+
 
 @media only screen and (max-width: 400px) {
   #category-text {
     margin-top: 130px;
     font-size: 2.5rem;
+  }
+
+  #frog {
+ display: none;
+  }
+
+  #landing-image{
+    min-width: 700px;
+    margin-left: 300px;
   }
 }
 
@@ -392,10 +447,19 @@ form {
     flex-flow: wrap column;
     justify-content: center;
   }
+
+  #landing-image{
+    min-width: 600px;
+    margin-left: 300px;
+  }
 }
 @media only screen and (max-width: 300px) {
   #intro-text {
     font-size: 1.1rem;
     margin-left: 10px;
   }
+
+ 
+
+  
 }
