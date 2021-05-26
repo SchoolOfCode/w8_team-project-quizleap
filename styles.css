@@ -6,14 +6,43 @@ body {
   background-color: #c3dda1;
   font-family: "Kanit", sans-serif;
   font-size: 1.2rem;
+}
 
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  background-color:  #e65600;
+  flex-flow: nowrap;
+  list-style-type: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #a8530e;
+  transform: scale(1.1);
+  color: white;
+}
+
+.navbar li {
+  flex: 5;
+}
+
+.navbar .social {
+  flex: 1;
 }
 
 input {
   font-size: 1.2rem;
 }
 
-#name-input{
+#name-input {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -61,15 +90,15 @@ header {
   border-radius: 10px;
 }
 .answer-background {
-  background-color: #c3dda1;
-}
-
-.corect-background {
   background-color: palegoldenrod;
 }
 
+.corect-background {
+  background-color: #c3dda1;
+}
+
 #question-answer {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding: 10px;
   text-align: center;
   max-width: 700px;
@@ -121,24 +150,46 @@ header {
   width: 100%;
   position: relative;
   justify-content: center;
+  display: flex;
 }
 #input-page {
   height: 100vh;
   width: 100%;
   position: relative;
 }
+
+#category-text {
+  margin-top: 80px;
+}
+
+#joke-page {
+  margin-top: -50px;
+  text-align: center;
+}
+
+#giphy-page {
+  margin-top: -50px;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
 #landing-image {
   max-height: 100vh;
   max-width: 100%;
-  display: inline;
+  display: flex;
   position: absolute;
 }
 
 #question-image {
   max-height: 100vh;
   max-width: 100%;
+  width: fit-content;
   display: inline;
   position: absolute;
+  margin-top: -100px;
 }
 
 #start-button {
@@ -146,9 +197,6 @@ header {
   position: absolute;
   margin-top: 300px;
 }
-
-
-
 
 #intro-text {
   /* float: left; */
@@ -172,7 +220,6 @@ header {
   position: relative;
 }
 #category-text {
-  margin-top: 200px;
   font-size: 2.5rem;
 }
 
@@ -245,6 +292,52 @@ form {
 #joke-display {
   align-items: center;
 }
+
+#giphy-button {
+  margin-bottom: 50px;
+}
+
+#explanation {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+#giphy-text {
+  font-size: 3rem;
+}
+
+#joke-text {
+  font-size: 3rem;
+}
+
+#joke-display {
+  font-size: 1.5rem;
+}
+
+#next-button {
+  margin-bottom: -50px;
+}
+
+#frog{
+  width: 350px;
+  margin-left: 800px
+}
+
+.joke-image{
+  z-index: 1;
+  position: absolute;
+  margin-top: -90px;
+  margin-left: 20px;
+  
+}
+
+#joke-page{
+  z-index: 1;
+}
+
 @media only screen and (max-width: 1500px) {
   #intro-text {
     /* float: left; */
@@ -259,8 +352,12 @@ form {
     max-width: 400px;
   }
 
+  #frog{
+    width: 330px;
+    margin-left: 300px
+  }
+
   #category-text {
-    margin-top: 190px;
     font-size: 3rem;
     text-align: center;
   }
@@ -273,7 +370,26 @@ form {
   #submit-button {
     margin-top: 20px;
   }
+
+
 }
+
+@media only screen and (max-width: 1300px) {
+  #landing-image {
+  width: 80%;
+
+  }
+
+  #frog {
+    
+    margin-left: 250px ;
+  }
+
+  @media only screen and (max-width: 900px) {
+    
+    #frog {
+      width: 250px
+    }
 
 @media only screen and (max-width: 700px) {
   #intro-text {
@@ -283,10 +399,22 @@ form {
     margin-right: 200px;
   }
 
-
+  #frog {
+    width: 180px
+  }
 }
 
 @media only screen and (max-width: 500px) {
+  .navbar {
+    display: none;
+  }
+
+  
+  #frog {
+    width: 200px;
+    margin-left: 150px ;
+  }
+
   #intro-text {
     font-size: 1.3rem;
     margin-top: 60px;
@@ -298,39 +426,57 @@ form {
     margin-top: 130px;
     font-size: 2.5rem;
   }
-  #giphy-button{
-    display: none;
-  }
 
   #start-button {
-      margin-bottom: -70px;
-   
+    margin-bottom: -50px;
+  }
+
+  #question-image {
+    display: none;
   }
 }
+
+
 
 @media only screen and (max-width: 400px) {
   #category-text {
     margin-top: 130px;
     font-size: 2.5rem;
   }
+
+  #frog {
+ display: none;
+  }
+
+  #landing-image{
+    min-width: 700px;
+    margin-left: 300px;
+    
+  }
 }
+
 @media only screen and (max-width: 370px) {
   #intro-text {
     font-size: 1.2rem;
   }
-
-
-
   #quantity-section {
     display: flex;
     flex-flow: wrap column;
     justify-content: center;
   }
-}
 
+  #landing-image{
+    min-width: 600px;
+    margin-left: 300px;
+  }
+}
 @media only screen and (max-width: 300px) {
   #intro-text {
     font-size: 1.1rem;
     margin-left: 10px;
   }
+
+ 
+
+  
 }

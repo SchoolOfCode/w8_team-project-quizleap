@@ -9,13 +9,9 @@ let categoryNumber = 0;
 let quantity = 5;
 let questions = document.getElementById("question-answer");
 const questionHeader = document.getElementById("question-header");
-const YOUR_API_KEY = "IqF46LnFbxjHxtdgk53tzd943vxFQgV3";  
 
-// 11 is Film
-// 12 is Music
-// 22 is Geography
-// 27 is Animals
-// Not one for food
+const YOUR_API_KEY = "IqF46LnFbxjHxtdgk53tzd943vxFQgV3";
+const submit = document.getElementById("submit-button");
 
 function changeCategoryType() {
   let category = document.getElementById("category");
@@ -30,12 +26,67 @@ function changeCategoryType() {
   } else if (categoryValue === "geography-category") {
     categoryNumber = 22;
     console.log(categoryNumber);
-  } else if (categoryValue === "celebrity-category") {
-    categoryNumber = 26;
-    console.log(categoryNumber);
+    // } else if (categoryValue === "celebrity-category") {
+    //   categoryNumber = 26;
+    //   console.log(categoryNumber);
   } else if (categoryValue === "animal-category") {
     categoryNumber = 27;
     console.log(categoryNumber);
+  } else if (categoryValue === "general-category") {
+    categoryNumber = 9;
+    console.log(categoryNumber);
+  } else if (categoryValue === "books-category") {
+    categoryNumber = 10;
+    console.log(categoryNumber);
+    // } else if (categoryValue === "musicals-category") {
+    //   categoryNumber = 13;
+    //   console.log(categoryNumber);
+  } else if (categoryValue === "television-category") {
+    categoryNumber = 14;
+    console.log(categoryNumber);
+  } else if (categoryValue === "video-category") {
+    categoryNumber = 15;
+    console.log(categoryNumber);
+  } else if (categoryValue === "board-category") {
+    categoryNumber = 16;
+    console.log(categoryNumber);
+  } else if (categoryValue === "mythology-category") {
+    categoryNumber = 20;
+    console.log(categoryNumber);
+  } else if (categoryValue === "sports-category") {
+    categoryNumber = 21;
+    console.log(categoryNumber);
+  } else if (categoryValue === "history-category") {
+    categoryNumber = 23;
+    console.log(categoryNumber);
+    // } else if (categoryValue === "politics-category") {
+    //   categoryNumber = 24;
+    //   console.log(categoryNumber);
+    // }else if (categoryValue === "art-category") {
+    //   categoryNumber = 25;
+    //   console.log(categoryNumber);
+  } else if (categoryValue === "vehicles-category") {
+    categoryNumber = 28;
+    console.log(categoryNumber);
+  } else if (categoryValue === "comics-category") {
+    categoryNumber = 29;
+    console.log(categoryNumber);
+  } else if (categoryValue === "manga-category") {
+    categoryNumber = 31;
+    console.log(categoryNumber);
+  } else if (categoryValue === "cartoon-category") {
+    categoryNumber = 32;
+    console.log(categoryNumber);
+  } else if (categoryValue === "nature-category") {
+    categoryNumber = 17;
+    console.log(categoryNumber);
+  } else if (categoryValue === "computing-category") {
+    categoryNumber = 18;
+    console.log(categoryNumber);
+    // } else if (categoryValue === "gadgets-category") {
+    //   categoryNumber = 19;
+    //   console.log(categoryNumber);
+    // }
   }
 }
 
@@ -58,20 +109,25 @@ function changeQuestionBackground() {
   // questionHeader.innerText = "Your Questions"
   questionHeader.style.fontWeight = "bold";
   questionHeader.style.fontSize = "1.5rem";
-  // questionHeader.style.display = flex;
+  questionHeader.style.fontSize = "1.5rem";
+  questionHeader.style.marginBottom = "-10px";
   changeName();
-  // questionHeader.style.fontStyle = "italic";
 }
 
 async function fetchQuizQuestions() {
   changeQuestionBackground();
-
   changeCategoryType(categoryNumber);
   changeDifficultylevel(difficultyLevel);
   changeAmountOfQuestions();
 
   // clearName() - removed
   questions.style.backgroundColor = "white";
+  submit.innerText = "Next Round";
+
+  let explanation = document.getElementById("explanation-section");
+  explanation.classList.add("hide");
+  let nameText = document.getElementById("search-section");
+  nameText.classList.add("hide");
 
   {
     // use fetch to do GET request for questions
@@ -82,7 +138,7 @@ async function fetchQuizQuestions() {
     `https://opentdb.com/api.php?amount=${quantity}&category=${categoryNumber}&difficulty=${difficultyLevel}&type=${typeOfQuestion}`
   );
   const dataResponse = await requestUrl.json();
-  console.log(dataResponse);
+  // console.log(dataResponse);
   const result = dataResponse.results;
   generateQuestions(result);
 }
@@ -102,11 +158,13 @@ function generateQuestions(results) {
     `;
   });
   displaysSection.innerHTML = generateQuestions;
+  let topButton = document.getElementById("top-button");
+  topButton.classList.remove("hide");
 }
 
 //change the text of the header to the value in the name box
 let changeH1 = document.getElementById("category-text");
-let nameValue = document.getElementById("name-input").input;
+let nameValue = document.getElementById("name-input").value;
 
 // function changeName(){
 // let nameValue = document.getElementById("name-input").value;
@@ -150,38 +208,55 @@ function changeAmountOfQuestions() {
   quantity = questionQuantity.value;
 }
 
-
-async function getGiphyOfTheDay(){
-  const requestURL = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${YOUR_API_KEY}`);
+// get giphy of the day from giphy API
+async function getGiphyOfTheDay() {
+  const requestURL = await fetch(
+    `https://api.giphy.com/v1/gifs/random?api_key=${YOUR_API_KEY}`
+  );
   const response = await requestURL.json();
-  console.log(response);
+  // console.log(response);
   const giphyResult = response.data;
-  console.log(giphyResult);
+  // console.log(giphyResult);
+  // create img tag
   const giphyImage = document.createElement("img");
+
   giphyImage.setAttribute("id", "giphy-img");
+  // set image as fetched giphy
   giphyImage.src = giphyResult["image_original_url"];
+  giphyImage.setAttribute("width", "900px");
+  // set giphy text
+  let giphyText = document.getElementById("giphy-explanation");
+  giphyText.classList.add("hide");
   let giphySection = document.getElementById("giphy-section");
+  giphySection.innerHTML = "";
   giphySection.appendChild(giphyImage);
 }
 
-async function fetchRandomJoke(){
-  const requestURL = await fetch ("https://official-joke-api.appspot.com/random_joke");
+// fetch randomly generated joke
+async function fetchRandomJoke() {
+  const requestURL = await fetch(
+    "https://official-joke-api.appspot.com/random_joke"
+  );
   const jokeResponse = await requestURL.json();
-  console.log(jokeResponse);
+  // console.log(jokeResponse);
 
   const punchLine = jokeResponse.punchline;
-  console.log(punchLine);
+  // console.log(punchLine);
   const setUp = jokeResponse.setup;
-  console.log(setUp);
+  // console.log(setUp);
 
   let jokeDisplay = document.getElementById("joke-display");
+  jokeDisplay.innerHTML = "";
+  jokeDisplay.style.backgroundColor = "white";
+  jokeDisplay.style.marginTop = "50px";
+  jokeDisplay.style.padding = "50px";
+  jokeDisplay.style.width = "4000px";
   let pTagOne = document.createElement("p");
   pTagOne.innerHTML = setUp;
   jokeDisplay.appendChild(pTagOne);
   let pTagTwo = document.createElement("p");
   pTagTwo.innerHTML = punchLine;
   jokeDisplay.appendChild(pTagTwo);
-
 }
 
 // clear input section
