@@ -82,7 +82,7 @@ The **main problem** to solve was the time spent on gathering the info. The **so
 - Multiple APIs used ✅
 - landing page ✅
 
-### Initial strech goals
+### Initial stretch goals
 
 - Use API to change difficulty of the questions based on user input ✅
 - Refresh button for each question
@@ -154,7 +154,7 @@ After completeing our basic version of the quiz app we have designed [this surve
 - background-color for correct answer changed to green ✅
 - added extra info about the app ✅
 
-## Things to add in the future - strech goals
+## Things to add in the future - stretch goals
 
 - user research on name
 - add true or false option
