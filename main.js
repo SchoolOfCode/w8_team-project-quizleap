@@ -1,17 +1,16 @@
 console.log("Hello Super Group 19");
 
-// grab DOM variable for question and answer
-
 const displaysSection = document.getElementById("question-answer");
-let typeOfQuestion = "multiple"; // boolean / Every Boolean answer is true can't use this for a true or false API
+let typeOfQuestion = "multiple"; // boolean 
 let difficultyLevel = "easy"; // medium || hard - can hard code it for now
 let categoryNumber = 0;
 let quantity = 5;
 let questions = document.getElementById("question-answer");
 const questionHeader = document.getElementById("question-header");
-
 const YOUR_API_KEY = "IqF46LnFbxjHxtdgk53tzd943vxFQgV3";
 const submit = document.getElementById("submit-button");
+
+// changes the category level of generated questions
 
 function changeCategoryType() {
   let category = document.getElementById("category");
@@ -90,6 +89,8 @@ function changeCategoryType() {
   }
 }
 
+// changes the difficulty level of generated questions
+
 function changeDifficultylevel() {
   const easy = document.getElementById("easy").checked;
   const medium = document.getElementById("medium").checked;
@@ -105,8 +106,9 @@ function changeDifficultylevel() {
   console.log(difficultyLevel);
 }
 
-function changeQuestionBackground() {
-  // questionHeader.innerText = "Your Questions"
+// changes the background style of generated questions
+
+function changeQuestionBackground() { 
   questionHeader.style.fontWeight = "bold";
   questionHeader.style.fontSize = "1.5rem";
   questionHeader.style.fontSize = "1.5rem";
@@ -114,13 +116,13 @@ function changeQuestionBackground() {
   changeName();
 }
 
+// gets quiz questions from API 
+
 async function fetchQuizQuestions() {
   changeQuestionBackground();
   changeCategoryType(categoryNumber);
   changeDifficultylevel(difficultyLevel);
   changeAmountOfQuestions();
-
-  // clearName() - removed
   questions.style.backgroundColor = "white";
   submit.innerText = "Next Round";
 
@@ -138,10 +140,12 @@ async function fetchQuizQuestions() {
     `https://opentdb.com/api.php?amount=${quantity}&category=${categoryNumber}&difficulty=${difficultyLevel}&type=${typeOfQuestion}`
   );
   const dataResponse = await requestUrl.json();
-  // console.log(dataResponse);
+  
   const result = dataResponse.results;
   generateQuestions(result);
 }
+
+// displays questions on the screen 
 
 function generateQuestions(results) {
   let generateQuestions = "";
@@ -166,15 +170,6 @@ function generateQuestions(results) {
 let changeH1 = document.getElementById("category-text");
 let nameValue = document.getElementById("name-input").value;
 
-// function changeName(){
-// let nameValue = document.getElementById("name-input").value;
-// if (nameValue == ""){
-//     nameValue = "QuizLeap"
-// }
-// let capitalName = capitalise(nameValue);
-// changeH1.innerText = (`${capitalName}'s Quiz`)
-// }
-
 // change your to name
 let changeH2 = document.getElementById("your-questions");
 
@@ -188,14 +183,14 @@ function changeName() {
   changeH2.innerText = `${capitalName}'s Questions`;
 }
 
+// capatalise a word 
+
 function capitalise(word) {
-  // Remove first letter
+    
   let lowerCaseWord = word.toLowerCase();
   let upperCaseLetter = lowerCaseWord[0];
   lowerCaseWord = lowerCaseWord.substring(1);
-  // Change letter to capital
   upperCaseLetter = upperCaseLetter.toUpperCase();
-  // Add letter back on to word
   let capitaliseWord = upperCaseLetter + lowerCaseWord;
 
   return capitaliseWord;
@@ -214,12 +209,9 @@ async function getGiphyOfTheDay() {
     `https://api.giphy.com/v1/gifs/random?api_key=${YOUR_API_KEY}`
   );
   const response = await requestURL.json();
-  // console.log(response);
   const giphyResult = response.data;
-  // console.log(giphyResult);
   // create img tag
   const giphyImage = document.createElement("img");
-
   giphyImage.setAttribute("id", "giphy-img");
   // set image as fetched giphy
   giphyImage.src = giphyResult["image_original_url"];
@@ -238,13 +230,8 @@ async function fetchRandomJoke() {
     "https://official-joke-api.appspot.com/random_joke"
   );
   const jokeResponse = await requestURL.json();
-  // console.log(jokeResponse);
-
   const punchLine = jokeResponse.punchline;
-  // console.log(punchLine);
   const setUp = jokeResponse.setup;
-  // console.log(setUp);
-
   let jokeDisplay = document.getElementById("joke-display");
   jokeDisplay.innerHTML = "";
   jokeDisplay.style.backgroundColor = "white";

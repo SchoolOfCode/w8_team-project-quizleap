@@ -40,7 +40,6 @@ Input Page	Difficulty changes the information from APIs -->
          <h1 class="block" id="category-text">Design your quiz</h1>
          <section  class ="block" id="explanation-section">
             <p id="explanation"> Entertain your audience with customisable quiz questions </p> 
-            <!-- <button class="button" id="giphy-button" onclick= getGiphyOfTheDay()>Get giphy of the day</button> -->
             </section>
 
       
@@ -56,19 +55,20 @@ Input Page	Difficulty changes the information from APIs -->
                 />
               </section>
 
-              <section class="block" id="dificult-section">
-                  <form id="difficulty-section">
-                    <input type="checkbox" id="easy" name="easy" />
-                    <label for="easy">Easy</label>
-          
-                    <input type="checkbox" id="medium" name="medium" />
-                    <label for="medium">Medium</label>
-          
-                    <input type="checkbox" id="hard" name="hard" />
-                    <label for="hard">Hard</label>
-                  </form>
-                  </section>
-         <section class="block" id="category-section" label for="category">Choose a category:</label>
+            <section class="block" id="dificult-section">
+              <form id="difficulty-section">
+                <input type="checkbox" id="easy" name="easy" />
+                <label for="easy">Easy</label>
+      
+                <input type="checkbox" id="medium" name="medium" />
+                <label for="medium">Medium</label>
+      
+                <input type="checkbox" id="hard" name="hard" />
+                <label for="hard">Hard</label>
+              </form>
+            </section>
+
+            <section class="block" id="category-section" label for="category">Choose a category:</label>
               <select id="category" name="category">
                 <option value="music-category">Music</option>
                 <option value="film-category">Film</option>
@@ -112,35 +112,27 @@ Input Page	Difficulty changes the information from APIs -->
                </select>
             </section>
 
-         <section class="block" id="submit-section"> 
-
-            
+            <section class="block" id="submit-section"> 
               <button class="button" id="submit-button" onclick=fetchQuizQuestions()>
                 Get Quiz!
               </button>
-            
-
-            <!-- <button class="button" id="random-joke" onclick= fetchRandomJoke()>
-              Get a joke in between rounds
-              </button> -->
             </section>
             
             <section id="joke-display" class="block">
               
             </section>
 
-        <section class= "block" id="question-header">
-          <h2 id="your-questions"></h2>
-        </section>
+            <section class= "block" id="question-header">
+               <h2 id="your-questions"></h2>
+            </section>
 
-         <section class= "block" id="question-answer">
+            <section class= "block" id="question-answer">
 
-         </section>
+             </section>
        
          <footer>
-          <a href=#nav class="button hide" id="top-button"> Back to top </a> </li>
-        
-        
+              <a href=#nav class="button hide" id="top-button"> Back to top </a> </li>
+    
          </footer>
 
      <script src="main.js"></script>

@@ -1,6 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap"); */
-
-/* Question and Single Answers */
 body {
   margin: 0;
   background-color: #c3dda1;
@@ -11,7 +8,7 @@ body {
 .navbar ul {
   display: flex;
   justify-content: space-between;
-  background-color:  #e65600;
+  background-color: #e65600;
   flex-flow: nowrap;
   list-style-type: none;
 }
@@ -55,8 +52,6 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  /* justify-content: center; */
 }
 
 header {
@@ -89,6 +84,7 @@ header {
   background: #f4b691;
   border-radius: 10px;
 }
+
 .answer-background {
   background-color: palegoldenrod;
 }
@@ -98,21 +94,16 @@ header {
 }
 
 #question-answer {
-  /* margin-top: 20px; */
   padding: 10px;
   text-align: center;
   max-width: 700px;
 }
 
-/* End of Question and Single Answers */
-
-/* Question and Multiple Answers */
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 5px 5px;
-  /* border: solid black 4px; */
   background-color: none;
   padding: 5px;
   margin: 5px;
@@ -143,15 +134,15 @@ header {
   grid-area: Answer-4;
 }
 
-/* End of Questions and Multiple Answers */
-
 #landing-page {
   height: 100vh;
   width: 100%;
   position: relative;
   justify-content: center;
   display: flex;
+  z-index: -1;
 }
+
 #input-page {
   height: 100vh;
   width: 100%;
@@ -181,6 +172,7 @@ header {
   max-width: 100%;
   display: flex;
   position: absolute;
+  z-index: -1;
 }
 
 #question-image {
@@ -199,15 +191,7 @@ header {
 }
 
 #intro-text {
-  /* float: left; */
-  text-align: left;
-  /* display: inline; */
-  position: absolute;
-  display: block;
-  margin-bottom: 10px;
-  margin-right: 400px;
-  font-size: 2rem;
-  font-weight: 400;
+  display: none;
 }
 
 .block {
@@ -235,6 +219,7 @@ header {
   position: relative;
   top: 1px;
 }
+
 .scorebutton {
   margin: 10px;
   background-color: #537e1b;
@@ -265,9 +250,11 @@ header {
   text-align: center;
   text-shadow: 1px 1px 0px #2f6627;
 }
+
 .scorebutton:hover {
   background-color: #678856;
 }
+
 .scorebutton:active {
   position: relative;
   top: 1px;
@@ -277,6 +264,7 @@ header {
   display: flex;
   flex-direction: row;
 }
+
 form {
   padding: 10px 10px;
   margin: 10px 20px;
@@ -321,40 +309,33 @@ form {
   margin-bottom: -50px;
 }
 
-#frog{
-  width: 350px;
-  margin-left: 800px
+#frog {
+  width: 300px;
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 500px;
+  z-index: 2;
 }
 
-.joke-image{
+.joke-image {
   z-index: 1;
   position: absolute;
   margin-top: -90px;
   margin-left: 20px;
-  
 }
 
-#joke-page{
+#joke-page {
   z-index: 1;
 }
 
-@media only screen and (max-width: 1500px) {
-  #intro-text {
-    /* float: left; */
-    text-align: left;
-    /* display: inline; */
-    position: absolute;
-    display: block;
-    margin-bottom: 10px;
-    margin-right: 100px;
-    font-size: 2rem;
-    font-weight: 600;
-    max-width: 400px;
-  }
+#index-mobile-background {
+  visibility: hidden;
+}
 
-  #frog{
+@media only screen and (max-width: 1500px) {
+  #frog {
     width: 330px;
-    margin-left: 300px
+    margin-left: 300px;
   }
 
   #category-text {
@@ -370,37 +351,27 @@ form {
   #submit-button {
     margin-top: 20px;
   }
-
-
 }
 
 @media only screen and (max-width: 1300px) {
   #landing-image {
-  width: 80%;
-
+    width: 80%;
   }
 
   #frog {
-    
-    margin-left: 250px ;
+    margin-left: 250px;
   }
+}
 
-  @media only screen and (max-width: 900px) {
-    
-    #frog {
-      width: 250px
-    }
+@media only screen and (max-width: 900px) {
+  #frog {
+    width: 250px;
+  }
+}
 
 @media only screen and (max-width: 700px) {
-  #intro-text {
-    font-size: 1.6rem;
-    font-weight: 600;
-    max-width: 250px;
-    margin-right: 200px;
-  }
-
   #frog {
-    width: 180px
+    width: 180px;
   }
 }
 
@@ -409,17 +380,25 @@ form {
     display: none;
   }
 
-  
+  #top-button {
+    display: none;
+  }
+
   #frog {
     width: 200px;
-    margin-left: 150px ;
+    margin-left: 150px;
   }
 
   #intro-text {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    padding: 30px;
+    text-align: center;
     font-size: 1.3rem;
-    margin-top: 60px;
     font-weight: 600;
-    margin-right: 60px;
   }
 
   #category-text {
@@ -434,24 +413,35 @@ form {
   #question-image {
     display: none;
   }
+
+  #landing-image {
+    display: none;
+  }
+
+  #index-mobile-background {
+    visibility: visible;
+    align-self: flex-start;
+    margin-top: -500px;
+  }
+
+  #frog-section {
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    margin-bottom: 200px;
+  }
+
+  #frog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-
-
 
 @media only screen and (max-width: 400px) {
   #category-text {
     margin-top: 130px;
     font-size: 2.5rem;
-  }
-
-  #frog {
- display: none;
-  }
-
-  #landing-image{
-    min-width: 700px;
-    margin-left: 300px;
-    
   }
 }
 
@@ -465,18 +455,14 @@ form {
     justify-content: center;
   }
 
-  #landing-image{
+  #landing-image {
     min-width: 600px;
     margin-left: 300px;
   }
 }
+
 @media only screen and (max-width: 300px) {
   #intro-text {
     font-size: 1.1rem;
-    margin-left: 10px;
   }
-
- 
-
-  
 }
