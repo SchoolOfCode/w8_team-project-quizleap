@@ -1,0 +1,141 @@
+<!-- Input Page	Box for Quiz host name input that links to text on Category page 
+Input Page	Button that links to Category Page 
+Input Page	Checkbox to select difficulty 
+Input Page	Difficulty changes the information from APIs -->
+
+<!-- 
+    Show category drop down box 
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="styles.css" /> 
+     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+     <title>Pick a category</title>
+   </head>
+   <header>
+    <nav class="navbar" id="nav">
+
+      <ul>
+        <li> <a href=input-page.html class="nav-link"> Create Quiz </a> </li>
+        <li> <a href=https://keepthescore.co/new/scoreboard class="nav-link" target="_blank"> Make Scoreboard </a> </li>
+        <li> <a href=joke.html class="nav-link"> Get Jokes </a> </li>
+        <li> <a href=giphy.html class="nav-link"> Get Giphy </a> </li>
+      </ul>
+
+  </nav>
+
+   </header>
+   <body>
+    <img src="pictures\jokepage.png" class="joke-image">
+     
+    <main id="input-page">
+
+       <img src="pictures\Desktop - landing page.png" id="question-image" /> 
+         <h1 class="block" id="category-text">Design your quiz</h1>
+         <section  class ="block" id="explanation-section">
+            <p id="explanation"> Entertain your audience with customisable quiz questions </p> 
+            </section>
+
+      
+            <section  class ="block" id="search-section">
+              <label>Name</label>  
+              <input
+                  role="main"
+                  aria-label="name-input"
+                  id="name-input"
+                  placeholder="Enter your name"
+                  onfocus="this.value=''"
+                  type="text"
+                />
+              </section>
+
+            <section class="block" id="dificult-section">
+              <form id="difficulty-section">
+                <input type="checkbox" id="easy" name="easy" />
+                <label for="easy">Easy</label>
+      
+                <input type="checkbox" id="medium" name="medium" />
+                <label for="medium">Medium</label>
+      
+                <input type="checkbox" id="hard" name="hard" />
+                <label for="hard">Hard</label>
+              </form>
+            </section>
+
+            <section class="block" id="category-section" label for="category">Choose a category:</label>
+              <select id="category" name="category">
+                <option value="music-category">Music</option>
+                <option value="film-category">Film</option>
+                <option value="geography-category">Geography</option>
+                <option value="animal-category">Animals</option>
+                <!-- <option value="celebrity-category">Celebrities</option> -->
+                <option value="general-category">General Knowledge</option>
+                <option value="books-category">Books</option>
+                <!-- <option value="musicals-category">Musicals and Theatre</option> -->
+                <option value="television-category">Television</option>
+                <option value="video-category">Video Games</option>
+                <option value="board-category">Board Games</option>
+                <option value="mythology-category">Mythology</option>
+                <option value="sports-category">Sports</option>
+                <option value="history-category">History</option>
+                <!-- <option value="politics-category">Politics</option>
+                <option value="art-category">Art</option> -->
+                <option value="vehicles-category">Vehicles</option>
+                <option value="comics-category">Comics</option>
+                <option value="manga-category">Japanese Anime & Manga</option>
+                <option value="cartoon-category">Cartoon and Animations</option>
+                <option value="nature-category">Science and Nature</option>
+                <option value="computing-category">Science and Computing </option>
+                <option value="maths-category">Science and Mathematics</option>
+                <!-- <option value="gadgets-category">Science and Gadgets</option> -->
+              </select>
+            </section>
+
+            <section class="block" id="quantity-section" label for="quantity-section">How many questions would you like:</label>
+              <select id="quantity" name="quantity"> 
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+               </select>
+            </section>
+
+            <section class="block" id="submit-section"> 
+              <button class="button" id="submit-button" onclick=fetchQuizQuestions()>
+                Get Quiz!
+              </button>
+            </section>
+            
+            <section id="joke-display" class="block">
+              
+            </section>
+
+            <section class= "block" id="question-header">
+               <h2 id="your-questions"></h2>
+            </section>
+
+            <section class= "block" id="question-answer">
+
+             </section>
+       
+         <footer>
+              <a href=#nav class="button hide" id="top-button"> Back to top </a> </li>
+    
+         </footer>
+
+     <script src="main.js"></script>
+   </body>
+ </html>
+ 
