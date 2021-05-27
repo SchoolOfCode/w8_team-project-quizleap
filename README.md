@@ -1,5 +1,11 @@
 # QuizLeap - an app designed and created for the quiz master
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c8a766c2-1243-4a1d-8c60-12ca28160f1b/deploy-status)](https://app.netlify.com/sites/quizleap/deploys)
+
+[Check it out](https://quizleap.netlify.app)
+
+[And you can also use this link](https://schoolofcode.github.io/w8_team-project-quizleap/)
+
 ## Overview
 
 For our Week 8 Front End project we have decided to create a **quiz app** website designed for quiz hosts. Using our app you can create and design personalised quizes that will take the user input on the desired category, number of questions, difficuty settings and automatically generate questions and answers. We have also included a link to a _scoreboard_ that the host can use to keep track of each team's score.
@@ -161,7 +167,7 @@ After completeing our basic version of the quiz app we have designed [this surve
 - make frogs animated
 - make a picture round
 - make a music/sound round
-- option to display questions over zoom 
+- option to display questions over zoom
 - option to add theme like Birthday Hen do
 
 ## Overall conclusion
