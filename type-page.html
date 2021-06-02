@@ -1,0 +1,82 @@
+<!-- Input Page	Box for Quiz host name input that links to text on Category page 
+Input Page	Button that links to Category Page 
+Input Page	Checkbox to select difficulty 
+Input Page	Difficulty changes the information from APIs -->
+
+<!-- 
+    Show category drop down box 
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="styles.css" /> 
+     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+     <title>Pick a category</title>
+   </head>
+   <header>
+    <nav class="navbar" id="nav">
+
+      <ul>
+        <li> <a href=input-page.html class="nav-link"> Create Quiz </a> </li>
+        <li> <a href=https://keepthescore.co/new/scoreboard class="nav-link" target="_blank"> Make Scoreboard </a> </li>
+        <li> <a href=joke.html class="nav-link"> Get Jokes </a> </li>
+        <li> <a href=giphy.html class="nav-link"> Get Giphy </a> </li>
+      </ul>
+
+  </nav>
+
+   </header>
+   <body>
+    <img src="pictures\jokepage.png" class="joke-image">
+     
+    <main id="input-page">
+
+       <img src="pictures\Desktop - landing page.png" id="question-image"> 
+         <h1 class="block" id="category-text">Would you like too? </h1>
+
+            <section id="typebutton-section">
+                <section id="present">
+                    <button
+                    class="button type"
+                    id="present"
+                    onclick="document.location=`present-page.html`">
+                  Present your screen to the audience
+                  </button>
+                    
+                </section>
+                <button
+                class="button type"
+                id="verbal"
+                onclick="document.location=`input-page.html`">
+                Read out questions to the audience
+              </button>
+
+        </section>
+
+        
+       <style>
+
+           #typebutton-section {
+               z-index: 1;
+               display: flex;
+               flex-flow: row wrap;
+               justify-content: center;
+           }
+
+           .type {
+               width: auto;
+               height: 100px;
+               text-align: center;
+               margin: 40px;
+           }
+       </style>
+
+     <script src="main.js"></script>
+   </body>
+ </html>
+ 
