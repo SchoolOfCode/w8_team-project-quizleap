@@ -1,0 +1,907 @@
+<!-- Input Page	Box for Quiz host name input that links to text on Category page 
+Input Page	Button that links to Category Page 
+Input Page	Checkbox to select difficulty 
+Input Page	Difficulty changes the information from APIs -->
+
+<!-- 
+    Show category drop down box 
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+     <title>Pick a category</title>
+   </head>
+   <header>
+    <nav class="navbar" id="nav">
+
+      <ul>
+        <li> <a href=type-page.html class="nav-link"> Create Quiz </a> </li>
+        <li> <a href=https://keepthescore.co/new/scoreboard class="nav-link" target="_blank"> Make Scoreboard </a> </li>
+        <li> <a href=joke.html class="nav-link"> Get Jokes </a> </li>
+        <li> <a href=giphy.html class="nav-link"> Get Giphy </a> </li>
+      </ul>
+
+  </nav>
+
+   </header>
+   <body>
+    <img src="pictures\jokepage.png" class="joke-image">
+     
+    <main id="input-page">
+
+        <section id="joke-display" class="block">
+              
+        </section>
+<section id="question-section" class="hide">
+        <section class= "block " id="question-header" >
+           <h2 id="your-questions"></h2>
+        </section>
+
+        <section class= "block" id="question-answer">
+
+         </section>
+
+        </section>
+
+         <a href=#nav class="button hide" id="top-button"> Show Answers </a> 
+
+       <img src="" id="question-image" /> 
+         <h1 class="block" id="category-text">Design your quiz</h1>
+         <section  class ="block" id="explanation-section">
+            <p id="explanation"> Entertain your audience with customisable quiz questions </p> 
+            </section>
+
+      
+            <section  class ="block" id="search-section">
+              <label>Name</label>  
+              <input
+                  role="main"
+                  aria-label="name-input"
+                  id="name-input"
+                  placeholder="Enter your name"
+                  onfocus="this.value=''"
+                  type="text"
+                />
+              </section>
+
+            <section class="block" id="dificult-section">
+              <form id="difficulty-section">
+                <input type="checkbox" id="easy" name="easy" />
+                <label for="easy">Easy</label>
+      
+                <input type="checkbox" id="medium" name="medium" />
+                <label for="medium">Medium</label>
+      
+                <input type="checkbox" id="hard" name="hard" />
+                <label for="hard">Hard</label>
+              </form>
+            </section>
+
+            <section class="block" id="category-section" label for="category">Choose a category:</label>
+              <select id="category" name="category">
+                <option value="music-category">Music</option>
+                <option value="film-category">Film</option>
+                <option value="geography-category">Geography</option>
+                <option value="animal-category">Animals</option>
+                <!-- <option value="celebrity-category">Celebrities</option> -->
+                <option value="general-category">General Knowledge</option>
+                <option value="books-category">Books</option>
+                <!-- <option value="musicals-category">Musicals and Theatre</option> -->
+                <option value="television-category">Television</option>
+                <option value="video-category">Video Games</option>
+                <option value="board-category">Board Games</option>
+                <option value="mythology-category">Mythology</option>
+                <option value="sports-category">Sports</option>
+                <option value="history-category">History</option>
+                <!-- <option value="politics-category">Politics</option>
+                <option value="art-category">Art</option> -->
+                <option value="vehicles-category">Vehicles</option>
+                <option value="comics-category">Comics</option>
+                <option value="manga-category">Japanese Anime & Manga</option>
+                <option value="cartoon-category">Cartoon and Animations</option>
+                <option value="nature-category">Science and Nature</option>
+                <option value="computing-category">Science and Computing </option>
+                <option value="maths-category">Science and Mathematics</option>
+                <!-- <option value="gadgets-category">Science and Gadgets</option> -->
+              </select>
+            </section>
+
+            <section class="block" id="quantity-section" label for="quantity-section">How many questions would you like:</label>
+              <select id="quantity" name="quantity"> 
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+               </select>
+            </section>
+
+            <section class="block" id="submit-section"> 
+              <button class="button" id="submit-button" onclick=fetchQuizQuestions()>
+                Get Quiz!
+              </button>
+            </section>
+            
+            <section id="joke-display" class="block">
+            </section>
+
+            <section class= "block" id="question-header">
+               <h2 id="your-questions"></h2>
+            </section>
+
+            <section class= "block" id="question-answer">
+                
+             </section>
+       
+        </main>
+        </body>
+ </html>
+
+ <style>
+     
+     body {
+  margin: 0;
+  background-color: #c3dda1;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.2rem;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e65600;
+  flex-flow: nowrap;
+  list-style-type: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #a8530e;
+  transform: scale(1.1);
+  color: white;
+}
+
+.navbar li {
+  flex: 5;
+}
+
+.navbar .social {
+  flex: 1;
+}
+
+input {
+  font-size: 1.2rem;
+}
+
+#name-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#quantity-section {
+  margin-top: 15px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  margin-bottom: 100px;
+}
+
+.button {
+  padding: 20px 60px;
+  margin: 10px 20px;
+  background: #e65600;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+}
+
+.border {
+  border: black solid 2px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10%;
+}
+
+.question-background {
+  background: #f4b691;
+  border-radius: 10px;
+}
+
+.answer-background {
+  background-color: palegoldenrod;
+}
+
+.corect-background {
+  background-color: #c3dda1;
+}
+
+#question-answer {
+  padding: 30px;
+  margin: 40px;
+  text-align: center;
+  max-width: 700px;
+  font-size: 2rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 5px 5px;
+  background-color: none;
+  padding: 5px;
+  margin: 5px;
+  grid-template-areas:
+    "Question Question Question Question"
+    "Answer-1 Answer-1 Answer-2 Answer-2"
+    "Answer-3 Answer-3 Answer-4 Answer-4";
+  text-align: center;
+}
+
+.Question {
+  grid-area: Question;
+}
+
+.Answer-1 {
+  grid-area: Answer-1;
+}
+
+.Answer-2 {
+  grid-area: Answer-2;
+}
+
+.Answer-3 {
+  grid-area: Answer-3;
+}
+
+.Answer-4 {
+  grid-area: Answer-4;
+}
+
+#landing-page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  display: flex;
+
+}
+
+#input-page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#category-text {
+  margin-top: 80px;
+}
+
+#joke-page {
+  margin-top: -50px;
+  text-align: center;
+}
+
+#giphy-page {
+  margin-top: -50px;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+#landing-image {
+  max-height: 100vh;
+  max-width: 100%;
+  display: flex;
+  position: absolute;
+
+}
+
+#question-image {
+  max-height: 100vh;
+  max-width: 100%;
+  width: fit-content;
+  display: inline;
+  position: absolute;
+  /* margin-top: -100px; */
+}
+
+#start-button {
+  text-align: center;
+  position: absolute;
+  margin-top: 300px;
+}
+
+#intro-text {
+  display: none;
+}
+
+.block {
+  position: relative;
+  align-items: center;
+  justify-content: space-evenly;
+  line-height: 30px;
+}
+#giphy-img {
+  position: relative;
+}
+#category-text {
+  font-size: 2.5rem;
+}
+
+#submit-section {
+  display: inline-flex;
+}
+
+#submit-button:hover {
+  background-color: #a8530e;
+}
+
+#submit-button:active {
+  position: relative;
+  top: 1px;
+}
+
+.scorebutton {
+  margin: 10px;
+  background-color: #537e1b;
+  -webkit-border-top-left-radius: 28px;
+  -moz-border-radius-topleft: 28px;
+  border-top-left-radius: 28px;
+  -webkit-border-top-right-radius: 28px;
+  -moz-border-radius-topright: 28px;
+  border-top-right-radius: 28px;
+  -webkit-border-bottom-right-radius: 28px;
+  -moz-border-radius-bottomright: 28px;
+  border-bottom-right-radius: 28px;
+  -webkit-border-bottom-left-radius: 28px;
+  -moz-border-radius-bottomleft: 28px;
+  border-bottom-left-radius: 28px;
+  text-indent: 0;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  color: #ffffff;
+  font-family: arial;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  height: 50px;
+  line-height: 50px;
+  width: 140px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 1px 1px 0px #2f6627;
+}
+
+.scorebutton:hover {
+  background-color: #678856;
+}
+
+.scorebutton:active {
+  position: relative;
+  top: 1px;
+}
+
+#score-section {
+  display: flex;
+  flex-direction: row;
+}
+
+form {
+  padding: 10px 10px;
+  margin: 10px 20px;
+  background: #e65600;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+}
+
+#joke-display {
+  align-items: center;
+}
+
+#giphy-button {
+  margin-bottom: 50px;
+}
+
+#explanation {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+#giphy-text {
+  font-size: 3rem;
+}
+
+#joke-text {
+  font-size: 3rem;
+}
+
+#joke-display {
+  font-size: 1.5rem;
+}
+
+#next-button {
+  margin-bottom: -50px;
+}
+
+#frog {
+  width: 300px;
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 500px;
+  z-index: 2;
+}
+
+.joke-image {
+  z-index: 1;
+  position: absolute;
+  margin-top: -90px;
+  margin-left: 20px;
+}
+
+#joke-page {
+  z-index: 1;
+}
+
+#index-mobile-background {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 1500px) {
+  #frog {
+    width: 330px;
+    margin-left: 300px;
+  }
+
+  #category-text {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  #search-section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #submit-button {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #landing-image {
+    width: 80%;
+  }
+
+  #frog {
+    margin-left: 250px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #frog {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #frog {
+    width: 180px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar {
+    display: none;
+  }
+
+
+
+  #frog {
+    width: 200px;
+    margin-left: 150px;
+  }
+
+  #intro-text {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  #category-text {
+    margin-top: 130px;
+    font-size: 2.5rem;
+  }
+
+  #start-button {
+    margin-bottom: -50px;
+  }
+
+  #question-image {
+    display: none;
+  }
+
+  #landing-image {
+    display: none;
+  }
+
+  #index-mobile-background {
+    visibility: visible;
+    align-self: flex-start;
+    margin-top: -500px;
+  }
+
+  #frog-section {
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    margin-bottom: 200px;
+  }
+
+  #frog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #category-text {
+    margin-top: 130px;
+    font-size: 2.5rem;
+  }
+
+  #question-answer {
+  margin: 10px;
+  font-size: 1rem;
+}
+
+}
+
+@media only screen and (max-width: 370px) {
+  #intro-text {
+    font-size: 1.2rem;
+  }
+  #quantity-section {
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+  }
+
+  #landing-image {
+    min-width: 600px;
+    margin-left: 300px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #intro-text {
+    font-size: 1.1rem;
+  }
+}
+
+
+ </style>
+
+     <script>
+
+console.log("Hello Super Group 19");
+
+const displaysSection = document.getElementById("question-answer");
+let typeOfQuestion = "multiple"; // boolean 
+let difficultyLevel = "easy"; // medium || hard - can hard code it for now
+let categoryNumber = 0;
+let quantity = 5;
+let questions = document.getElementById("question-answer");
+const questionHeader = document.getElementById("question-header");
+const YOUR_API_KEY = "IqF46LnFbxjHxtdgk53tzd943vxFQgV3";
+const submit = document.getElementById("submit-button");
+let topButton = document.getElementById("top-button");
+let resultAnswer = "";
+let questionSection = document.getElementById("question-section")
+
+
+
+// changes the category level of generated questions
+
+function changeCategoryType() {
+  let category = document.getElementById("category");
+  let categoryValue = category.value;
+
+  if (categoryValue === "music-category") {
+    categoryNumber = 12;
+    console.log(categoryNumber);
+  } else if (categoryValue === "film-category") {
+    categoryNumber = 11;
+    console.log(categoryNumber);
+  } else if (categoryValue === "geography-category") {
+    categoryNumber = 22;
+    console.log(categoryNumber);
+    // } else if (categoryValue === "celebrity-category") {
+    //   categoryNumber = 26;
+    //   console.log(categoryNumber);
+  } else if (categoryValue === "animal-category") {
+    categoryNumber = 27;
+    console.log(categoryNumber);
+  } else if (categoryValue === "general-category") {
+    categoryNumber = 9;
+    console.log(categoryNumber);
+  } else if (categoryValue === "books-category") {
+    categoryNumber = 10;
+    console.log(categoryNumber);
+    // } else if (categoryValue === "musicals-category") {
+    //   categoryNumber = 13;
+    //   console.log(categoryNumber);
+  } else if (categoryValue === "television-category") {
+    categoryNumber = 14;
+    console.log(categoryNumber);
+  } else if (categoryValue === "video-category") {
+    categoryNumber = 15;
+    console.log(categoryNumber);
+  } else if (categoryValue === "board-category") {
+    categoryNumber = 16;
+    console.log(categoryNumber);
+  } else if (categoryValue === "mythology-category") {
+    categoryNumber = 20;
+    console.log(categoryNumber);
+  } else if (categoryValue === "sports-category") {
+    categoryNumber = 21;
+    console.log(categoryNumber);
+  } else if (categoryValue === "history-category") {
+    categoryNumber = 23;
+    console.log(categoryNumber);
+    // } else if (categoryValue === "politics-category") {
+    //   categoryNumber = 24;
+    //   console.log(categoryNumber);
+    // }else if (categoryValue === "art-category") {
+    //   categoryNumber = 25;
+    //   console.log(categoryNumber);
+  } else if (categoryValue === "vehicles-category") {
+    categoryNumber = 28;
+    console.log(categoryNumber);
+  } else if (categoryValue === "comics-category") {
+    categoryNumber = 29;
+    console.log(categoryNumber);
+  } else if (categoryValue === "manga-category") {
+    categoryNumber = 31;
+    console.log(categoryNumber);
+  } else if (categoryValue === "cartoon-category") {
+    categoryNumber = 32;
+    console.log(categoryNumber);
+  } else if (categoryValue === "nature-category") {
+    categoryNumber = 17;
+    console.log(categoryNumber);
+  } else if (categoryValue === "computing-category") {
+    categoryNumber = 18;
+    console.log(categoryNumber);
+    // } else if (categoryValue === "gadgets-category") {
+    //   categoryNumber = 19;
+    //   console.log(categoryNumber);
+    // }
+  }
+}
+
+// changes the difficulty level of generated questions
+
+function changeDifficultylevel() {
+  const easy = document.getElementById("easy").checked;
+  const medium = document.getElementById("medium").checked;
+  const hard = document.getElementById("hard").checked;
+
+  if (easy) {
+    difficultyLevel = "easy";
+  } else if (medium) {
+    difficultyLevel = "medium";
+  } else if (hard) {
+    difficultyLevel = "hard";
+  }
+  console.log(difficultyLevel);
+}
+
+// changes the background style of generated questions
+
+function changeQuestionBackground() { 
+  questionHeader.style.fontWeight = "bold";
+  questionHeader.style.fontSize = "1.5rem";
+  questionHeader.style.fontSize = "1.5rem";
+  questionHeader.style.marginBottom = "-10px";
+  changeName();
+}
+
+// gets quiz questions from API 
+
+async function fetchQuizQuestions() {
+  changeQuestionBackground();
+  changeCategoryType(categoryNumber);
+  changeDifficultylevel(difficultyLevel);
+  changeAmountOfQuestions();
+  questions.style.backgroundColor = "white";
+  submit.innerText = "Next Round";
+  window.scrollTo(0, 0);
+  let explanation = document.getElementById("explanation-section");
+  explanation.classList.add("hide");
+  let nameText = document.getElementById("search-section");
+  nameText.classList.add("hide");
+  questionSection.classList.remove("hide");
+
+  {
+    // use fetch to do GET request for questions
+    // chose music category; amount of questions = 10; difficulty =easy; type = multiple( multiple choice)
+    // you can change the amount, category,difficulty, and type based on user input
+  }
+  const requestUrl = await fetch(
+    `https://opentdb.com/api.php?amount=${quantity}&category=${categoryNumber}&difficulty=${difficultyLevel}&type=${typeOfQuestion}`
+  );
+  const dataResponse = await requestUrl.json();
+  
+  const result = dataResponse.results;
+  generateQuestions(result);
+}
+
+// displays questions on the screen 
+
+function generateQuestions(results) {
+  let generateQuestions = "";
+  results.map((result) => {
+    generateQuestions += `
+    
+    <section class="question-answer grid-container">
+    <div class="border question-answer question-background Question"> ${result.question}</div>
+    <div class="border corect-background Answer-1 hide correct-answer big-answer" >${result.correct_answer}</div> </section>
+    `;
+
+    
+  });
+  displaysSection.innerHTML = generateQuestions;
+ 
+  topButton.classList.remove("hide");
+  
+  
+}
+
+topButton.addEventListener("click", generateAnswers)
+
+function generateAnswers(event) {
+
+    let correctAnswers = document.getElementsByClassName("correct-answer");
+    for (let answer of correctAnswers) { 
+        answer.classList.remove("hide");
+     }
+  
+}
+
+//change the text of the header to the value in the name box
+let changeH1 = document.getElementById("category-text");
+let nameValue = document.getElementById("name-input").value;
+
+// change your to name
+let changeH2 = document.getElementById("your-questions");
+
+function changeName() {
+  console.log("why arent you working");
+  nameValue = document.getElementById("name-input").value;
+  if (nameValue == "") {
+    nameValue = "Clive";
+  }
+  let capitalName = capitalise(nameValue);
+  changeH2.innerText = `${capitalName}'s Questions`;
+}
+
+// capatalise a word 
+
+function capitalise(word) {
+    
+  let lowerCaseWord = word.toLowerCase();
+  let upperCaseLetter = lowerCaseWord[0];
+  lowerCaseWord = lowerCaseWord.substring(1);
+  upperCaseLetter = upperCaseLetter.toUpperCase();
+  let capitaliseWord = upperCaseLetter + lowerCaseWord;
+
+  return capitaliseWord;
+}
+
+// input changes the amount of questions
+
+function changeAmountOfQuestions() {
+  let questionQuantity = document.getElementById("quantity");
+  quantity = questionQuantity.value;
+}
+
+// get giphy of the day from giphy API
+async function getGiphyOfTheDay() {
+  const requestURL = await fetch(
+    `https://api.giphy.com/v1/gifs/random?api_key=${YOUR_API_KEY}`
+  );
+  const response = await requestURL.json();
+  const giphyResult = response.data;
+  // create img tag
+  const giphyImage = document.createElement("img");
+  giphyImage.setAttribute("id", "giphy-img");
+  // set image as fetched giphy
+  giphyImage.src = giphyResult["image_original_url"];
+  giphyImage.setAttribute("width", "900px");
+  // set giphy text
+  let giphyText = document.getElementById("giphy-explanation");
+  giphyText.classList.add("hide");
+  let giphySection = document.getElementById("giphy-section");
+  giphySection.innerHTML = "";
+  giphySection.appendChild(giphyImage);
+}
+
+// fetch randomly generated joke
+async function fetchRandomJoke() {
+  const requestURL = await fetch(
+    "https://official-joke-api.appspot.com/random_joke"
+  );
+  const jokeResponse = await requestURL.json();
+  const punchLine = jokeResponse.punchline;
+  const setUp = jokeResponse.setup;
+  let jokeDisplay = document.getElementById("joke-display");
+  jokeDisplay.innerHTML = "";
+  jokeDisplay.style.backgroundColor = "white";
+  jokeDisplay.style.marginTop = "50px";
+  jokeDisplay.style.padding = "50px";
+  jokeDisplay.style.width = "4000px";
+  let pTagOne = document.createElement("p");
+  pTagOne.innerHTML = setUp;
+  jokeDisplay.appendChild(pTagOne);
+  let pTagTwo = document.createElement("p");
+  pTagTwo.innerHTML = punchLine;
+  jokeDisplay.appendChild(pTagTwo);
+}
+
+// clear input section
+// function clearName() {
+//   document.getElementById("name-input").value = "";
+// }
+
+        
+     </script>
+   </body>
+ </html>
+ 
